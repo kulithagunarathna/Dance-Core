@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'MetroPhotograph - Demo Version Regular';
+  src: url('./assets/fonts/MetroPhotograph-DemoVersion-Regular.otf') format('opentype'); /* Use 'opentype' for .otf */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Improves performance by showing fallback text first */
+}
