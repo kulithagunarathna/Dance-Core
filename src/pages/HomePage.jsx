@@ -68,7 +68,7 @@ const HomePage = ({ setActivePage }) => {
 
       <section className="p-8 w-full bg-white flex flex-col items-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: 'black' }}>
-          About Us hi
+          About Us
         </h2>
 
         {/* Flex container for logo and paragraph */}
