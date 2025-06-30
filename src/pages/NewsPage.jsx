@@ -31,23 +31,25 @@ const NewsPage = () => {
 
   return (
     <>
-      <NavBar />
-      <main className="min-h-screen  text-gray-400 p-8 flex flex-col items-center"> {/* Added bg-gray-900 for full background */}
-        <h1 className="text-5xl font-bold mb-6 text-center text-white">Studio Dance Core News</h1>
-        <div className="max-w-4xl text-center mb-8">
-          <p className="text-xl mb-4">
+      {/* Assuming NavBar handles its own responsiveness */}
+      <NavBar setActivePage='news' /> {/* Added setActivePage prop for NavBar */}
+      <main className="min-h-screen bg-black text-gray-400 p-4 sm:p-6 md:p-8 flex flex-col items-center"> {/* Adjusted padding and set background color */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-center text-white">Studio Dance Core News</h1> {/* Responsive font size and margin */}
+        <div className="max-w-xl sm:max-w-2xl md:max-w-4xl text-center mb-6 sm:mb-8 px-2"> {/* Adjusted max-width and added horizontal padding */}
+          <p className="text-base sm:text-lg mb-3"> {/* Responsive font size and margin */}
             Welcome to our News page! This is where we share all the latest updates, events, and exciting announcements from Studio Dance Core.
           </p>
-          <p className="text-lg">
+          <p className="text-sm sm:text-base"> {/* Responsive font size */}
             Stay tuned for upcoming performances, workshop schedules, student achievements, and more!
           </p>
         </div>
 
         {/* Render news items using the NewsCard component */}
-        <div className="w-full max-w-4xl"> {/* Container for all news cards */}
+        {/* Added gap for spacing between cards and adjusted max-width */}
+        <div className="w-full max-w-xl sm:max-w-2xl md:max-w-4xl space-y-8 sm:space-y-10">
           {newsItems.map(item => (
             <NewsCard
-              key={item.id} // <--- Important: Use a unique key for each NewsCard
+              key={item.id}
               imageUrl={item.imageUrl}
               title={item.title}
               description={item.description}
@@ -56,6 +58,9 @@ const NewsPage = () => {
               location={item.location}
             />
           ))}
+          {newsItems.length === 0 && (
+            <p className="text-xl text-gray-400 text-center mt-10">No news updates at the moment. Please check back later!</p>
+          )}
         </div>
       </main>
     </>

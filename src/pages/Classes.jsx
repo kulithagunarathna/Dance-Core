@@ -1,24 +1,22 @@
-import React, { useState, useEffect, useMemo } from 'react'; // <--- Import useMemo
+import React, { useState, useEffect, useMemo } from 'react';
 import classSchedules from '../utils/classSchedules'; // Ensure this path is correct
 
-// Import the event image
-import freeDanceWorkshopImage from '../assets/images/events/event-1.webp'; // Adjust the path if needed
-import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg'; // Adjust the path if needed
+// Import the event images
+import freeDanceWorkshopImage from '../assets/images/events/event-1.webp';
+import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
 
 const Classes = () => {
   // Use useMemo to memoize 'locations' array
-  // This ensures 'locations' maintains the same reference across renders,
-  // preventing it from triggering the useEffect infinitely.
-  const locations = useMemo(() => Object.keys(classSchedules), []); // <--- Fixed: useMemo with empty dependency array
-  
-  const daysOfWeek = useMemo(() => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], []); // <--- Optional: memoize daysOfWeek too for consistency, though it's already stable
+  const locations = useMemo(() => Object.keys(classSchedules), []);
+
+  const daysOfWeek = useMemo(() => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], []);
 
   const [selectedPlace, setSelectedPlace] = useState('');
   const [selectedDay, setSelectedDay] = useState('');
   const [filteredClasses, setFilteredClasses] = useState([]);
 
   // Define your event data here
-  const events = [
+  const events = useMemo(() => [ // Memoize events array too, as it's static
     {
       id: 2,
       imageUrl: freeDanceWorkshopImage2,
@@ -29,7 +27,7 @@ const Classes = () => {
       imageUrl: freeDanceWorkshopImage,
       status: 'closed' // Set status to 'closed' as it's already done
     },
-  ];
+  ], []); // Empty dependency array means it's created once
 
   // Effect to update filtered classes whenever selections change
   useEffect(() => {
@@ -43,7 +41,7 @@ const Classes = () => {
       }
       // Case 2: Only place selected
       else if (selectedPlace) {
-        for (const day of daysOfWeek) { // daysOfWeek is now stable
+        for (const day of daysOfWeek) {
           const classesForDay = classSchedules[selectedPlace]?.[day] || [];
           currentFilteredClasses = currentFilteredClasses.concat(classesForDay.map(cls => ({
             ...cls,
@@ -54,7 +52,7 @@ const Classes = () => {
       }
       // Case 3: Only day selected
       else if (selectedDay) {
-        for (const place of locations) { // locations is now stable
+        for (const place of locations) {
           const classesForDay = classSchedules[place]?.[selectedDay] || [];
           currentFilteredClasses = currentFilteredClasses.concat(classesForDay.map(cls => ({
             ...cls,
@@ -66,7 +64,7 @@ const Classes = () => {
     }
     // If no selection is made, set filteredClasses to empty to show the prompt
     setFilteredClasses(currentFilteredClasses);
-  }, [selectedPlace, selectedDay, locations, daysOfWeek]); // dependencies are now stable
+  }, [selectedPlace, selectedDay, locations, daysOfWeek]);
 
   const getHeaderText = () => {
     if (selectedPlace && selectedDay) {
@@ -93,21 +91,20 @@ const Classes = () => {
     return 'No classes found based on your selection.';
   };
 
-
   return (
-    <section className="p-8 w-full bg-[#F7D9BC] text-black">
-      <h2 className="text-5xl md:text-7xl font-extrabold mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em' }}>
+    <section className="p-4 sm:p-6 md:p-8 w-full bg-[#F7D9BC] text-black"> {/* Adjusted overall padding */}
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em' }}> {/* Responsive font size for title */}
         Classes / Events
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full max-w-6xl mx-auto"> {/* Adjusted gap */}
         {/* Left Column: Selection Controls + Class Schedule */}
         <div className="w-full md:w-1/2 flex flex-col space-y-4">
           {/* Select Place */}
           <label htmlFor="place-select" className="sr-only">Select Location</label>
           <select
             id="place-select"
-            className="p-3 rounded-md bg-white text-black focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-md"
+            className="p-2 sm:p-3 rounded-md bg-white text-black focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-md text-sm sm:text-base"
             value={selectedPlace}
             onChange={(e) => setSelectedPlace(e.target.value)}
           >
@@ -121,7 +118,7 @@ const Classes = () => {
           <label htmlFor="day-select" className="sr-only">Select Day</label>
           <select
             id="day-select"
-            className="p-3 rounded-md bg-white text-black focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-md"
+            className="p-2 sm:p-3 rounded-md bg-white text-black focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-md text-sm sm:text-base"
             value={selectedDay}
             onChange={(e) => setSelectedDay(e.target.value)}
           >
@@ -132,8 +129,8 @@ const Classes = () => {
           </select>
 
           {/* Class Schedule Display */}
-          <div className="w-full bg-white rounded-xl p-4 overflow-y-auto shadow-lg mt-4" style={{maxHeight: '400px'}}>
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-black">
+          <div className="w-full bg-white rounded-xl p-3 sm:p-4 overflow-y-auto shadow-lg mt-4" style={{ maxHeight: '400px' }}> {/* Responsive padding */}
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black"> {/* Responsive font size for schedule header */}
               {getHeaderText()}
             </h3>
             {filteredClasses.length > 0 ? (
@@ -141,11 +138,11 @@ const Classes = () => {
                 {filteredClasses.map((cls, index) => (
                   <li key={index} className="bg-gray-800 p-3 rounded-md flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-md">
                     <div>
-                      <p className="text-lg font-medium text-white">{cls.name}</p>
-                      <p className="text-sm text-gray-300">{cls.time}</p>
+                      <p className="text-base sm:text-lg font-medium text-white">{cls.name}</p> {/* Responsive font size */}
+                      <p className="text-xs sm:text-sm text-gray-300">{cls.time}</p> {/* Responsive font size */}
                     </div>
                     <div className="mt-2 sm:mt-0 text-right">
-                      <p className="text-md text-gray-400">Instr: {cls.instructor}</p>
+                      <p className="text-sm text-gray-400">Instr: {cls.instructor}</p> {/* Responsive font size */}
                       {!(selectedPlace && selectedDay) && (
                         <p className="text-xs text-gray-500 mt-1">{cls.day} at {cls.location}</p>
                       )}
@@ -154,7 +151,7 @@ const Classes = () => {
                 ))}
               </ul>
             ) : (
-              <p className="text-gray-400">
+              <p className="text-sm sm:text-base text-gray-400"> {/* Responsive font size */}
                 {getEmptyMessage()}
               </p>
             )}
@@ -162,8 +159,8 @@ const Classes = () => {
         </div>
 
         {/* Right Column: Events Card */}
-        <div className="w-full md:w-1/2 bg-white rounded-xl p-4 shadow-lg flex flex-col space-y-4" style={{maxHeight: '350px'}}>
-          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-black">
+        <div className="w-full md:w-1/2 bg-white rounded-xl p-3 sm:p-4 shadow-lg flex flex-col space-y-4" style={{ maxHeight: '350px' }}> {/* Responsive padding */}
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black"> {/* Responsive font size for events header */}
             Events
           </h3>
           <div className="overflow-y-auto space-y-4">
@@ -171,12 +168,12 @@ const Classes = () => {
               <div key={event.id} className="relative rounded-md overflow-hidden shadow-sm">
                 <img
                   src={event.imageUrl}
-                  alt={event.name || 'Event Image'} // Added fallback for alt text
+                  alt={event.name || 'Event Image'}
                   className="w-full h-auto object-cover"
                 />
                 {event.status === 'closed' && (
                   <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-                    <p className="text-white text-3xl font-bold uppercase tracking-wider">CLOSED</p>
+                    <p className="text-white text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider">CLOSED</p> {/* Responsive font size */}
                   </div>
                 )}
               </div>

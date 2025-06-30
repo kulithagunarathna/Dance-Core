@@ -22,20 +22,18 @@ const HomePage = ({ setActivePage }) => {
   const navigateToAboutUsPage = () => {
     navigate('/about-us'); // Navigate to the /about-us route
   };
-  
 
   return (
     <div className="flex flex-col items-center justify-center bg-black w-full">
-        {/* The Navigation Bar, positioned absolutely on top of the video and text */}
-        <div className="sticky top-0 z-50 w-full"> {/* Added this wrapper div */}
-          <NavBar setActivePage={setActivePage} />
-        </div>
+      {/* The Navigation Bar, positioned absolutely on top of the video and text */}
+      <div className="sticky top-0 z-50 w-full">
+        <NavBar setActivePage={setActivePage} />
+      </div>
 
       {/* Hero Section - now contains the NavBar as an overlay */}
       <section
-        className="relative w-full h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
+        className="relative w-full h-[60vh] md:h-[80vh] lg:h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
       >
-
         <video
           className="absolute w-full h-full object-cover opacity-100"
           src={heroVideo}
@@ -48,43 +46,30 @@ const HomePage = ({ setActivePage }) => {
         >
           Your browser does not support the video tag.
         </video>
-
-        {/* Hero Button Overlay - explicitly using flex for internal alignment and positioning */}
-        {/* This div is now absolute to the bottom, takes full width, and uses flex to center the button */}
-        <div className="absolute bottom-0 left-0 right-0 z-30 text-white text-center p-4 pb-20 flex justify-center items-end">
-          <button
-           className="px-10 py-4 bg-transparent text-white text-xl font-semibold rounded-full shadow-lg
-                       hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
-                       onClick={scrollToProductions}
-          >
-            <ArrowDown className="items-center"/>
-          </button>
-        </div>
       </section>
 
       <Productions ref={productionsRef} />
       <Merch/>
       <Classes/>
 
+      {/* About Us Section */}
       <section className="p-8 w-full bg-white flex flex-col items-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: 'black' }}>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: 'black' }}>
           About Us
         </h2>
 
-        {/* Flex container for logo and paragraph */}
         <div className="flex items-center justify-center p-4">
-          {/* Paragraph on the right */}
-          <p className="text-lg text-gray-600 text-center flex-grow text-justify">
-            We are creating meaningful and enjoyable products to our audience. We are also training our younger generation through our Studio Dance Core classes.
+          <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
+            We are creating meaningful and enjoyable products for our audience. We are also training our younger generation through our Studio Dance Core classes.
           </p>
         </div>
         <br />
         <br />
 
         <button
-          className="px-10 py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg flex items-center justify-center
-                  hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
-          onClick={navigateToAboutUsPage} // Call the navigation function
+          className="px-8 py-3 md:px-10 md:py-4 bg-black text-white text-base md:text-lg font-semibold rounded-full shadow-lg flex items-center justify-center
+                     hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
+          onClick={navigateToAboutUsPage}
         >
           See More
         </button>

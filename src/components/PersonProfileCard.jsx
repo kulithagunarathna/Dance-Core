@@ -1,45 +1,45 @@
 // src/components/PersonProfileCard.jsx
 import React from 'react';
 
-const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => { // Add instagramUrl here
+const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => {
   return (
-    <> {/* Use a React Fragment to wrap multiple top-level elements */}
-      <div className="flex flex-col items-center p-10
-                      md:flex-row md:items-center md:justify-center md:space-x-16 lg:space-x-24">
+    <>
+      <div className="flex flex-col items-center p-6 sm:p-8 md:p-10
+                      md:flex-row md:items-center md:justify-center md:space-x-8 lg:space-x-16"> {/* Adjusted padding and space-x */}
         {/* Profile Image Wrapper - Contains the pop-up card */}
-        <div className="mb-10 md:mb-0 md:flex-shrink-0">
-          <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] cursor-pointer group">
+        <div className="mb-8 md:mb-0 md:flex-shrink-0"> {/* Adjusted margin-bottom */}
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 cursor-pointer group"> {/* Adjusted image sizes */}
             {/* Front of the card - Now acts as the main image that pops up */}
-            {instagramUrl ? ( // Conditionally render the link if instagramUrl is provided
-              <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+            {instagramUrl ? (
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name}'s Instagram`}>
                 <img
-                  src={imageUrl} // Main image
-                  alt={`${name} - Front`}
+                  src={imageUrl}
+                  alt={`${name} - Profile`}
                   className="absolute inset-0 w-full h-full rounded-lg shadow-lg
                              transition-transform duration-300 ease-out
-                             group-hover:scale-105 group-hover:shadow-2xl" // Pop-up effect on hover
+                             group-hover:scale-105 group-hover:shadow-2xl"
                 />
               </a>
             ) : (
               <img
-                src={imageUrl} // Main image
-                alt={`${name} - Front`}
+                src={imageUrl}
+                alt={`${name} - Profile`}
                 className="absolute inset-0 w-full h-full rounded-lg shadow-lg
                            transition-transform duration-300 ease-out
-                           group-hover:scale-105 group-hover:shadow-2xl" // Pop-up effect on hover
+                           group-hover:scale-105 group-hover:shadow-2xl"
               />
             )}
           </div>
         </div>
 
         {/* Details Card */}
-        <div className="bg-[#f0e6d2] p-10 rounded-xl shadow-xl text-gray-800 w-full max-w-lg lg:max-w-xl">
-          <h2 className="font-sans text-3xl font-bold mb-5 leading-tight md:text-4xl lg:text-5xl">
+        <div className="bg-[#f0e6d2] p-6 sm:p-8 rounded-xl shadow-xl text-gray-800 w-full max-w-sm sm:max-w-md md:max-w-lg"> {/* Adjusted padding and max-width */}
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight"> {/* Responsive font sizes and margin */}
             {name}
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3"> {/* Adjusted space-y */}
             {roles.map((role, index) => (
-              <p key={index} className="font-mono text-lg tracking-widest uppercase md:text-xl">
+              <p key={index} className="font-mono text-base sm:text-lg tracking-widest uppercase"> {/* Responsive font size */}
                 {role}
               </p>
             ))}
@@ -48,7 +48,7 @@ const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => { // Add 
       </div>
 
       {/* Add the <hr> with gray-200 color here */}
-      <hr className="my-10 border-t-2 border-gray-200 w-full max-w-5xl mx-auto" />
+      <hr className="my-8 sm:my-10 border-t-2 border-gray-200 w-full max-w-xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto" /> {/* Adjusted margin and max-width */}
     </>
   );
 };

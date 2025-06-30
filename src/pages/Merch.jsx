@@ -1,31 +1,28 @@
 import React, { useRef, useEffect } from 'react';
 
 // Placeholder images - In a real application, you would use actual image paths
-// For demonstration, using placehold.co to generate placeholder images.
-// Ensure these URLs are robust or replaced with your actual image assets.
 import merchTshirt from "../assets/images/tshirt.webp";
 import merchScarf from "../assets/images/soon.jpg";
-const merchHat = "https://placehold.co/200x200/F0F0F0/333333?text=Hat";
-const merchHoodie = "https://placehold.co/200x200/F0F0F0/333333?text=Hoodie";
-const merchBottle = "https://placehold.co/200x200/F0F0F0/333333?text=Bottle";
+// Note: Keeping placeholder.co URLs commented out as they were previously,
+// assuming you'll replace them with local assets or robust CDN links if needed.
+// const merchHat = "https://placehold.co/200x200/F0F0F0/333333?text=Hat";
+// const merchHoodie = "https://placehold.co/200x200/F0F0F0/333333?text=Hoodie";
+// const merchBottle = "https://placehold.co/200x200/F0F0F0/333333?text=Bottle";
 
 // Reusable component for a Merch Card
 const MerchCard = ({ item, url }) => (
-  // Added transition and hover:scale-105 for the hover effect
-  <div className="flex-shrink-0 w-64 h-full bg-white rounded-xl shadow-lg p-4 flex flex-col justify-between items-center text-center mx-3 transition-transform duration-300 ease-in-out hover:scale-105"> {/* Added mx-3 for horizontal spacing */}
-    <a href={url} target="_blank">
+  // Adjusted width (w-48 sm:w-56 md:w-64) and height (h-56 sm:h-64 md:h-72) for responsiveness
+  // Adjusted horizontal margin (mx-2 sm:mx-3 md:mx-4) for spacing
+  <div className="flex-shrink-0 w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-72 bg-white rounded-xl shadow-lg p-3 sm:p-4 flex flex-col justify-between items-center text-center mx-2 sm:mx-3 md:mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
+    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.name}`}>
       <img
         src={item.image}
         alt={item.name}
-        className="max-h-[80%] w-auto object-contain mb-2 rounded" // Adjust image size within card, added rounded
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x200/F0F0F0/333333?text=Image+Error"; }} // Fallback for image loading errors
+        className="max-h-[70%] sm:max-h-[80%] w-auto object-contain mb-2 rounded" // Adjusted max-height for images
+        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x200/F0F0F0/333333?text=Image+Error"; }}
       />
-      <p className="text-black text-lg font-semibold">{item.name}</p>
-      <p className="text-gray-600 text-sm">Rs.{item.price}</p>
-      {/* Optional: Add a "Buy Now" button or link */}
-      {/* <button className="mt-2 bg-gray-800 text-white py-1 px-4 rounded-full text-xs hover:bg-gray-700 transition duration-300">
-      Buy Now
-      </button> */}
+      <p className="text-black text-base sm:text-lg font-semibold">{item.name}</p> {/* Responsive font size */}
+      <p className="text-gray-600 text-xs sm:text-sm">Rs.{item.price}</p> {/* Responsive font size */}
     </a>
   </div>
 );
@@ -36,15 +33,11 @@ const Merch = () => {
 
   const merchItems = [
     { id: 'tshirt', name: 'Studio T-Shirt', price: '2699.00', image: merchTshirt, url:'https://docs.google.com/forms/d/e/1FAIpQLSf_KSj1Mwu-8qHwq0vvSz-HC5wDiNJcqh-nUGEea-FqHwZbBQ/viewform?usp=dialog' },
-    { id: 'scarf', name: 'Signature Scarf', price: '', image: merchScarf },
-    //{ id: 'hat', name: 'Dance Core Hat', price: '24.99', image: merchHat },
-    //{ id: 'hoodie', name: 'Performance Hoodie', price: '45.00', image: merchHoodie },
-    //{ id: 'bottle', name: 'Hydration Bottle', price: '12.00', image: merchBottle },
-    //{ id: 'tshirt', name: 'Studio T-Shirt', price: '29.99', image: merchTshirt },
-    //{ id: 'scarf', name: 'Signature Scarf', price: '19.50', image: merchScarf },
-    //{ id: 'hat', name: 'Dance Core Hat', price: '24.99', image: merchHat },
-    //{ id: 'hoodie', name: 'Performance Hoodie', price: '45.00', image: merchHoodie },
-    //{ id: 'bottle', name: 'Hydration Bottle', price: '12.00', image: merchBottle },
+    { id: 'scarf', name: 'Signature Scarf', price: 'COMING SOON', image: merchScarf, url: '#' }, // Added a placeholder URL and price text
+    // Uncomment and add actual images/urls when ready
+    // { id: 'hat', name: 'Dance Core Hat', price: '24.99', image: merchHat },
+    // { id: 'hoodie', name: 'Performance Hoodie', price: '45.00', image: merchHoodie },
+    // { id: 'bottle', name: 'Hydration Bottle', price: '12.00', image: merchBottle },
   ];
 
   useEffect(() => {
@@ -55,8 +48,7 @@ const Merch = () => {
         // Prevent default vertical scrolling
         event.preventDefault();
         // Adjust scrollLeft based on the mouse wheel deltaY
-        // Multiplied by 2.0 for faster scroll speed
-        merchContainer.scrollLeft += event.deltaY * 2.0; // Increased multiplier for faster scrolling
+        merchContainer.scrollLeft += event.deltaY * 2.0;
       };
 
       // Add the event listener to the container
@@ -67,61 +59,61 @@ const Merch = () => {
         merchContainer.removeEventListener('wheel', handleWheelScroll);
       };
     }
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  }, []);
 
   return (
-    // Same height as Production section (h-96), black background
-    // Changed section to a flex column to properly distribute space
-    <section className="w-full p-8 bg-[#54463a] text-white h-[500px] flex flex-col">
+    <section className="w-full p-4 sm:p-6 md:p-8 bg-[#54463a] text-white min-h-[400px] md:h-[500px] flex flex-col justify-center"> {/* Adjusted padding and height */}
       {/* Custom styles for scrollbar hiding and smooth scrolling with hover effect */}
       <style>{`
         /* Webkit browsers (Chrome, Safari, Edge) */
         .merch-scroll-container::-webkit-scrollbar {
-          width: 4px; /* Thin scrollbar */
+          width: 4px;
           height: 4px;
         }
 
         .merch-scroll-container::-webkit-scrollbar-track {
-          background: transparent; /* Transparent track */
+          background: transparent;
         }
 
         .merch-scroll-container::-webkit-scrollbar-thumb {
-          background-color: transparent; /* Invisible by default */
-          border-radius: 2px; /* Rounded corners for the thumb */
-          transition: background-color 0.3s ease-in-out; /* Smooth transition for appearance */
+          background-color: transparent;
+          border-radius: 2px;
+          transition: background-color 0.3s ease-in-out;
         }
 
         /* Show scrollbar thumb on hover of the container */
         .merch-scroll-container:hover::-webkit-scrollbar-thumb {
-          background-color: rgba(156, 163, 175, 0.5); /* Grey, slightly transparent, on hover */
+          background-color: rgba(156, 163, 175, 0.5);
         }
 
         /* Firefox */
         .merch-scroll-container {
-          scrollbar-width: thin; /* Thin scrollbar for Firefox */
-          scrollbar-color: transparent transparent; /* Thumb and track transparent by default */
-          scroll-behavior: smooth; /* Smooth scrolling */
+          scrollbar-width: thin;
+          scrollbar-color: transparent transparent;
+          scroll-behavior: smooth;
         }
 
         /* Show scrollbar thumb on hover for Firefox */
         .merch-scroll-container:hover {
-          scrollbar-color: rgba(156, 163, 175, 0.5) transparent; /* Thumb visible on hover for Firefox */
+          scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
         }
       `}</style>
 
-      {/* Increased margin-bottom (mb-8) for more space below the title */}
-      <h2 className="text-7xl font-extrabold mb-8 text-left uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFDBBB' }}>
+      <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 sm:mb-8 text-center sm:text-left uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFDBBB' }}> {/* Responsive font size and text alignment */}
         Merch
       </h2>
-      {/* Horizontal scroll container */}
-      {/* Replaced fixed height calc with flex-grow and added padding-top (pt-4) for buffer space */}
       <div
-        ref={merchContainerRef} // Attach the ref to this div
-        className="flex overflow-x-auto pb-4 merch-scroll-container flex-grow pt-4" // Added merch-scroll-container class
+        ref={merchContainerRef}
+        className="flex overflow-x-auto pb-4 sm:pb-6 merch-scroll-container flex-grow items-center justify-start sm:justify-center" // Centered items for fewer cards
       >
-        {merchItems.map((item) => (
-          <MerchCard key={item.id} item={item} url={item.url}/>
-        ))}
+        {/* Fallback for url */}
+        {merchItems.length > 0 ? (
+          merchItems.map((item) => (
+            <MerchCard key={item.id} item={item} url={item.url || '#'} />
+          ))
+        ) : (
+          <p className="text-lg text-gray-300 text-center w-full">More awesome merch coming soon!</p>
+        )}
       </div>
     </section>
   );
