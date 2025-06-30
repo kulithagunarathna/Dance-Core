@@ -4,15 +4,20 @@ import PersonProfileCard from '../components/PersonProfileCard';
 
 // Import unique images for each person (front and back)
 // ASSUME THESE PATHS AND FILENAMES ARE CORRECT IN YOUR PROJECT
-import jayaruwanFront from '../assets/images/profiles/jayaruwan-prabodya.jpg';
+import jayaruwanFront from '../assets/images/jayaruwan-prabodya-front.webp';
+import jayaruwanBack from '../assets/images/jayaruwan-prabodya-back.webp'; // You need this second image!
 
-import sandevFront from '../assets/images/profiles/sandev-ubeysekara.jpg';
+import sandevFront from '../assets/images/sandev-ubeysekara-front.webp';
+import sandevBack from '../assets/images/sandev-ubeysekara-back.webp';
 
-import hasinduFront from '../assets/images/profiles/hasindu-prasanjaya.jpg';
+import hasinduFront from '../assets/images/hasindu-prasanjaya-front.webp';
+import hasinduBack from '../assets/images/hasindu-prasanjaya-back.webp';
 
-import hiviruFront from '../assets/images/profiles/hiviru-dilneth.jpg';
+import hiviruFront from '../assets/images/hiviru-dilneth-front.webp';
+import hiviruBack from '../assets/images/hiviru-dilneth-back.webp';
 
-import tasinduFront from '../assets/images/profiles/tasindu-wikramasinghe.jpg';
+import tasinduFront from '../assets/images/tasindu-wikramasinghe-front.webp';
+import tasinduBack from '../assets/images/tasindu-wikramasinghe-back.webp';
 
 
 const AboutUsPage = () => (
@@ -20,7 +25,7 @@ const AboutUsPage = () => (
     <NavBar setActivePage="about-us" />
 
     <div className="bg-black py-5 text-center border-b-2 border-gray-800">
-      <h1 className="text-5xl tracking-widest md:text-6xl lg:text-7xl" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFFF' }}>
+      <h1 className="font-photograph text-5xl tracking-widest text-white md:text-6xl lg:text-7xl">
         DANCE CORE HIGHER FAMILY
       </h1>
     </div>
@@ -37,6 +42,7 @@ const AboutUsPage = () => (
           "FOUNDER OF STUDIO DANCE CORE"
         ]}
         imageUrl={jayaruwanFront}
+        backImageUrl={jayaruwanBack} // Pass the second image URL here
       />
 
       {/* Person 2: SANDEV UBEYSEKARA */}
@@ -47,6 +53,7 @@ const AboutUsPage = () => (
           "WRITER"
         ]}
         imageUrl={sandevFront}
+        backImageUrl={sandevBack}
       />
 
       {/* Person 3: HASINDU PRASANJAYA */}
@@ -57,6 +64,7 @@ const AboutUsPage = () => (
           "WRITER"
         ]}
         imageUrl={hasinduFront}
+        backImageUrl={hasinduBack}
       />
 
       {/* Person 4: HIVIRU DILNETH */}
@@ -66,6 +74,7 @@ const AboutUsPage = () => (
           "CINEMATOGRAPHER"
         ]}
         imageUrl={hiviruFront}
+        backImageUrl={hiviruBack}
       />
 
       {/* Person 5: TASINDU WIKRAMASINGHE */}
@@ -75,6 +84,7 @@ const AboutUsPage = () => (
           "CINEMATOGRAPHER"
         ]}
         imageUrl={tasinduFront}
+        backImageUrl={tasinduBack}
       />
     </div>
   </div>

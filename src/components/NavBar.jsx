@@ -1,32 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { Home, Shirt, BookOpen, Users, PlayCircle, Search, Newspaper, UsersRound } from 'lucide-react';
 import logo from '../assets/images/logo.webp'; // Adjust the path to your logo image
 
 const NavBar = ({ setActivePage }) => {
   return (
-    <nav className="w-full h-25 flex items-center justify-between p-4 bg-transparent backdrop-blur-none">
+    <nav className="w-full flex items-center justify-between p-4 bg-transparent backdrop-blur-none">
       <div className="flex items-center space-x-2">
         <span className="size-60 flex items-center">
-          <img src={logo} alt="logo" />
+          <Link to="/" aria-label="Go to Home Page">
+            <img src={logo} alt="logo" />
+          </Link>
         </span>
       </div>
       <div className="flex space-x-8">
-        <button
-          onClick={() => setActivePage('aboutus')}
+        <Link
+          to="/about-us"
           className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-2xl font-medium group"
           aria-label="Go to About Us Page"
         >
           <UsersRound className="h-8 w-8 mr-1 group-hover:scale-110 transition-transform" />
           Who We Are?
-        </button>
-        <button
-          onClick={() => setActivePage('productions')}
+        </Link>
+        <Link
+          to="/news"
           className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-2xl font-medium group"
-          aria-label="Go to Productions Section"
+          aria-label="Go to News Page"
         >
           <Newspaper className="h-8 w-8 mr-1 group-hover:scale-110 transition-transform" />
           News
-        </button>
+        </Link>
+
         <div className="relative flex items-center">
           <input
             type="text"

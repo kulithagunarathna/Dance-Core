@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react';
 // For demonstration, using placehold.co to generate placeholder images.
 // Ensure these URLs are robust or replaced with your actual image assets.
 import merchTshirt from "../assets/images/tshirt.webp";
-const merchScarf = "https://placehold.co/200x200/F0F0F0/333333?text=Scarf";
+import merchScarf from "../assets/images/soon.jpg";
 const merchHat = "https://placehold.co/200x200/F0F0F0/333333?text=Hat";
 const merchHoodie = "https://placehold.co/200x200/F0F0F0/333333?text=Hoodie";
 const merchBottle = "https://placehold.co/200x200/F0F0F0/333333?text=Bottle";
@@ -36,7 +36,7 @@ const Merch = () => {
 
   const merchItems = [
     { id: 'tshirt', name: 'Studio T-Shirt', price: '2699.00', image: merchTshirt, url:'https://docs.google.com/forms/d/e/1FAIpQLSf_KSj1Mwu-8qHwq0vvSz-HC5wDiNJcqh-nUGEea-FqHwZbBQ/viewform?usp=dialog' },
-    { id: 'scarf', name: 'Signature Scarf', price: '2990.00', image: merchScarf },
+    { id: 'scarf', name: 'Signature Scarf', price: '', image: merchScarf },
     //{ id: 'hat', name: 'Dance Core Hat', price: '24.99', image: merchHat },
     //{ id: 'hoodie', name: 'Performance Hoodie', price: '45.00', image: merchHoodie },
     //{ id: 'bottle', name: 'Hydration Bottle', price: '12.00', image: merchBottle },
