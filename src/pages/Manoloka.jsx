@@ -21,8 +21,8 @@ const VideoCard = ({ imageUrl, title, videoUrl }) => (
   >
     <img
       src={imageUrl}
-      alt={title}
-      className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" // Ensure image covers the full height of the card
+      alt={title || 'Coming Soon'}
+      className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
     />
 
     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
