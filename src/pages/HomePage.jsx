@@ -25,14 +25,14 @@ const HomePage = ({ setActivePage }) => {
   
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-stone-800">
+    <div className="flex flex-col items-center justify-center bg-stone-800  w-full">
 
       {/* Hero Section - now contains the NavBar as an overlay */}
       <section
-        className="relative w-full h-[100vh] bg-gray-800 flex justify-center overflow-hidden shadow-lg"
+        className="relative w-full h-[100vh] bg-gray-800 flex justify-center overflow-hidden shadow-lg mt-0 pt-0"
       >
         {/* The Navigation Bar, positioned absolutely on top of the video and text */}
-        <div className="absolute top-0 left-0 right-0 z-40">
+        <div className="absolute top-0 left-0 right-0 z-40 w-full">
           <NavBar setActivePage={setActivePage} />
         </div>
 

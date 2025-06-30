@@ -7,7 +7,7 @@ const NavBar = ({ setActivePage }) => {
   return (
     <nav className="w-full flex items-center justify-between p-4 bg-transparent backdrop-blur-none">
       <div className="flex items-center space-x-2">
-        <span className="size-60 flex items-center">
+        <span className="size-60">
           <Link to="/" aria-label="Go to Home Page">
             <img src={logo} alt="logo" />
           </Link>

@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
 import Manoloka from './pages/Manoloka';
 import NewsPage from './pages/NewsPage';
+import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage setActivePage={setActivePage} />} />
           <Route path="/about-us" element={<AboutUsPage />} />
