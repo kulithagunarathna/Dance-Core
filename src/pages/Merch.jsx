@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 
 // Placeholder images - In a real application, you would use actual image paths
 import merchTshirt from "../assets/images/tshirt.webp";
-import merchScarf from "../assets/images/soon.jpg";
+import merchScarf from "../assets/images/scarf_soon.webp";
 // Note: Keeping placeholder.co URLs commented out as they were previously,
 // assuming you'll replace them with local assets or robust CDN links if needed.
 // const merchHat = "https://placehold.co/200x200/F0F0F0/333333?text=Hat";

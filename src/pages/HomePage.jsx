@@ -32,7 +32,7 @@ const HomePage = ({ setActivePage }) => {
 
       {/* Hero Section - now contains the NavBar as an overlay */}
       <section
-        className="relative w-full h-[60vh] md:h-[80vh] lg:h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
+        className="relative w-full h-[calc(100vw*3/4)] md:h-[80vh] lg:h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
       >
         <video
           className="absolute w-full h-full object-cover opacity-100"
@@ -68,7 +68,7 @@ const HomePage = ({ setActivePage }) => {
 
         <button
           className="px-8 py-3 md:px-10 md:py-4 bg-black text-white text-base md:text-lg font-semibold rounded-full shadow-lg flex items-center justify-center
-                     hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
+                      hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
           onClick={navigateToAboutUsPage}
         >
           See More

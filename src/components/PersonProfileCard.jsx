@@ -47,8 +47,7 @@ const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => {
         </div>
       </div>
 
-      {/* Add the <hr> with gray-200 color here */}
-      <hr className="my-8 sm:my-10 border-t-2 border-gray-200 w-full max-w-xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto" /> {/* Adjusted margin and max-width */}
+      
     </>
   );
 };

@@ -2,7 +2,7 @@
 
 body {
   /* Set the background image */
-  background-image: url('/assets/images/bg.png');
+  background-image: url('/assets/images/bg.webp');
 
   /* Ensure the image covers the entire background */
   background-size: cover;

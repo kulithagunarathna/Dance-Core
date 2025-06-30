@@ -20,7 +20,7 @@ const Classes = () => {
     {
       id: 2,
       imageUrl: freeDanceWorkshopImage2,
-      status: ''
+      status: 'closed'
     },
     {
       id: 1,
