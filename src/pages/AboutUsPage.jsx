@@ -17,7 +17,9 @@ import tasinduFront from '../assets/images/profiles/tasindu-wikramasinghe.jpg';
 
 const AboutUsPage = () => (
   <div className="bg-black text-white">
-    <NavBar setActivePage="about-us" />
+     <div className="sticky top-0 z-50 w-full"> {/* Added this wrapper div */}
+          <NavBar setActivePage='about-us' />
+        </div>
 
     <div className="bg-black py-5 text-center border-b-2 border-gray-800">
       <h1 className="text-5xl tracking-widest md:text-6xl lg:text-7xl" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFFF' }}>
@@ -37,6 +39,7 @@ const AboutUsPage = () => (
           "FOUNDER OF STUDIO DANCE CORE"
         ]}
         imageUrl={jayaruwanFront}
+        instagramUrl="https://www.instagram.com/jayaruwan.official?igsh=M3VkYjdjb3p5bjU2" // **ADD THIS LINE**
       />
 
       {/* Person 2: SANDEV UBEYSEKARA */}
@@ -47,6 +50,7 @@ const AboutUsPage = () => (
           "WRITER"
         ]}
         imageUrl={sandevFront}
+        instagramUrl="https://www.instagram.com/sandev_ubeysekara" // **ADD THIS LINE**
       />
 
       {/* Person 3: HASINDU PRASANJAYA */}
@@ -57,6 +61,7 @@ const AboutUsPage = () => (
           "WRITER"
         ]}
         imageUrl={hasinduFront}
+        instagramUrl="https://www.instagram.com/hasindu_prasanjaya" // **ADD THIS LINE**
       />
 
       {/* Person 4: HIVIRU DILNETH */}
@@ -66,6 +71,7 @@ const AboutUsPage = () => (
           "CINEMATOGRAPHER"
         ]}
         imageUrl={hiviruFront}
+        instagramUrl="https://www.instagram.com/hiviru_dilneth" // **ADD THIS LINE**
       />
 
       {/* Person 5: TASINDU WIKRAMASINGHE */}
@@ -75,6 +81,7 @@ const AboutUsPage = () => (
           "CINEMATOGRAPHER"
         ]}
         imageUrl={tasinduFront}
+        instagramUrl="https://www.instagram.com/tasindu_wikramasinghe" // **ADD THIS LINE**
       />
     </div>
   </div>

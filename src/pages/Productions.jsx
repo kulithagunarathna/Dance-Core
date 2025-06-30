@@ -5,7 +5,7 @@ import productionsBannerVideo from '../assets/videos/manoloka.mp4';
 
 // Import your local images
 import manoloka from '../assets/images/manoloka_theBeginning.webp';
-import soon1 from '../assets/images/SOON.webp';
+import thePodcast from '../assets/images/thepodcast.webp';
 import soon2 from '../assets/images/SOON.webp';
 import soon3 from '../assets/images/SOON.webp';
 import soon4 from '../assets/images/SOON.webp';
@@ -40,7 +40,7 @@ const Productions = forwardRef((props, ref) => {
   const videos = [
     // Added unique `id` and ensured all properties are present
     { id: 'manoloka-01', imageUrl: manoloka, title: 'Manoloka Episode 01 - THE BEGINNING', videoUrl: 'https://youtu.be/4B_bPZ_9v2o'},
-    { id: 'soon-01', imageUrl: soon1, title: 'Coming Soon: Production 1', videoUrl: '#'}, // Use '#' or a placeholder URL
+    { id: 'thePodcast', imageUrl: thePodcast, title: 'Coming Soon', videoUrl: '#'}, // Use '#' or a placeholder URL
     { id: 'soon-02', imageUrl: soon2, title: 'Coming Soon: Production 2', videoUrl: '#'},
     { id: 'soon-03', imageUrl: soon3, title: 'Coming Soon: Production 3', videoUrl: '#'},
     { id: 'soon-04', imageUrl: soon4, title: 'Coming Soon: Production 4', videoUrl: '#'},
