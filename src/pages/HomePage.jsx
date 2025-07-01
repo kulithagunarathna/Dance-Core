@@ -104,8 +104,7 @@ const HomePage = ({ setActivePage }) => {
 
         <div className="flex items-center justify-center p-4">
           <p
-            className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl"
-            style={{ fontFamily: "Bebas Neue" }}
+            className="font-sans text-base md:text-lg text-gray-600 text-center flex-grow max-w-2xl"
           >
             We are creating meaningful and enjoyable products for our audience. We are also training our younger generation through our Studio Dance Core classes.
           </p>

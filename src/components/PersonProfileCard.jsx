@@ -39,7 +39,7 @@ const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => {
           </h2>
           <div className="space-y-2 sm:space-y-3"> {/* Adjusted space-y */}
             {roles.map((role, index) => (
-              <p key={index} className="font-mono text-base sm:text-lg tracking-widest uppercase"> {/* Responsive font size */}
+              <p key={index} className="text-xl sm:text-2xl tracking-widest uppercase" style={{fontFamily:'Bebas Neue'}}> {/* Responsive font size */}
                 {role}
               </p>
             ))}
