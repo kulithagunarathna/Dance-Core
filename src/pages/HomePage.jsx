@@ -1,38 +1,77 @@
-import React, { useRef } from 'react';
-import heroVideo from '../assets/videos/home.mp4'; // Adjust the path as needed
-import logo from '../assets/images/logo.webp'; // Path to your fallback image
-import Productions from './Productions'; // Import the Productions component
-import Merch from './Merch'; // Import the Merch component
-import Classes from './Classes'; // Import the new Classes component
-import AboutUsPage from './AboutUsPage'; // Import the AboutUsPage component
-import NavBar from '../components/NavBar'; // Import the NavBar component
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import heroVideo from '../assets/videos/home.mp4';
+import logo from '../assets/images/logo.webp';
+import Productions from './Productions';
+import Merch from './Merch';
+import Classes from './Classes';
+import NavBar from '../components/NavBar';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage = ({ setActivePage }) => {
   const productionsRef = useRef(null);
-  const navigate = useNavigate();
+  const merchRef = useRef(null);
+  const classesRef = useRef(null);
+  const aboutUsRef = useRef(null);
 
-  const scrollToProductions = () => {
-    if (productionsRef.current) {
-      productionsRef.current.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [notFoundMessage, setNotFoundMessage] = useState(null);
+
+  // Effect to scroll to sections based on URL hash or display not found
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const notFoundQuery = params.get('notFound');
+
+    setNotFoundMessage(null);
+    let timeoutId;
+
+    if (location.hash === '#merch-section' && merchRef.current) {
+      merchRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (location.hash === '#productions-section' && productionsRef.current) {
+      productionsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (location.hash === '#classes-section' && classesRef.current) {
+      classesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (location.hash === '#about-us-section' && aboutUsRef.current) {
+      aboutUsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (notFoundQuery) {
+      setNotFoundMessage(`"${decodeURIComponent(notFoundQuery)}" not found.`);
+      timeoutId = setTimeout(() => {
+        setNotFoundMessage(null);
+      }, 10000); // 10 seconds
+      window.history.replaceState({}, document.title, window.location.pathname);
     }
-  };
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+
+  }, [location.hash, location.search]);
 
   const navigateToAboutUsPage = () => {
-    navigate('/about-us'); // Navigate to the /about-us route
+    navigate('/about-us');
   };
 
   return (
     <div className="flex flex-col items-center justify-center bg-black w-full">
-      {/* The Navigation Bar, positioned absolutely on top of the video and text */}
       <div className="sticky top-0 z-50 w-full">
         <NavBar setActivePage={setActivePage} />
       </div>
 
-      {/* Hero Section - now contains the NavBar as an overlay */}
+      {notFoundMessage && (
+        <div className="w-full bg-red-800 text-white p-4 text-center text-lg md:text-xl font-semibold">
+          {notFoundMessage}
+        </div>
+      )}
+
       <section
         className="relative w-full h-[calc(100vw*3/4)] md:h-[80vh] lg:h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
       >
@@ -44,18 +83,17 @@ const HomePage = ({ setActivePage }) => {
           muted
           playsInline
           title="Studio Dance Core"
-          poster={logo} // Fallback image for browsers that don't support video
+          poster={logo}
         >
           Your browser does not support the video tag.
         </video>
       </section>
 
       <Productions ref={productionsRef} />
-      <Merch/>
-      <Classes/>
+      <Merch ref={merchRef} />
+      <Classes ref={classesRef} />
 
-      {/* About Us Section */}
-      <section className="p-8 w-full bg-white flex flex-col items-center">
+      <section ref={aboutUsRef} className="p-8 w-full bg-white flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: 'black' }}>
           About Us
         </h2>
@@ -63,22 +101,40 @@ const HomePage = ({ setActivePage }) => {
         <div className="flex items-center justify-center p-4">
           <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
             We are creating meaningful and enjoyable products for our audience. We are also training our younger generation through our Studio Dance Core classes.
-          </p>         
+          </p>
         </div>
 
+        {/* MODIFIED: Email link */}
         <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
-        <FontAwesomeIcon icon={faEnvelope} /> <a href="#" className="text-blue-500 hover:underline"> studiodancecore@gmail.com </a>
+          <FontAwesomeIcon icon={faEnvelope} />{' '}
+          <a
+            href="mailto:studiodancecore@gmail.com" // Mailto link
+            className="text-blue-500 hover:underline"
+            aria-label="Send email to studiodancecore@gmail.com"
+          >
+            studiodancecore@gmail.com
+          </a>
         </p>
 
-        <p>
-        <FontAwesomeIcon icon={faWhatsapp} /> 0713161550
+        {/* MODIFIED: WhatsApp link */}
+        <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
+          <FontAwesomeIcon icon={faWhatsapp} />{' '}
+          <a
+            href="https://wa.me/94713161550" // WhatsApp link (using Sri Lanka country code 94)
+            target="_blank" // Open in a new tab
+            rel="noopener noreferrer" // Security best practice
+            className="text-blue-500 hover:underline"
+            aria-label="Chat on WhatsApp with 0713161550"
+          >
+            0713161550
+          </a>
         </p>
         <br />
         <br />
 
         <button
           className="px-8 py-3 md:px-10 md:py-4 bg-black text-white text-base md:text-lg font-semibold rounded-full shadow-lg flex items-center justify-center
-                      hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
+                     hover:bg-[#FFDBBB] transform hover:scale-105 transition-all duration-300 border border-white"
           onClick={navigateToAboutUsPage}
         >
           See More

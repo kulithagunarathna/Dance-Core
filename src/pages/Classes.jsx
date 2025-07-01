@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+// src/components/Classes.jsx
+import React, { useState, useEffect, useMemo, forwardRef } from 'react'; // Import forwardRef
 import classSchedules from '../utils/classSchedules'; // Ensure this path is correct
 
 // Import the event images
 import freeDanceWorkshopImage from '../assets/images/events/event-1.webp';
 import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
 
-const Classes = () => {
+// Use forwardRef to allow HomePage to pass a ref to this component
+const Classes = forwardRef((props, ref) => { // 'ref' is the second argument from forwardRef
   // Use useMemo to memoize 'locations' array
   const locations = useMemo(() => Object.keys(classSchedules), []);
 
@@ -92,12 +94,13 @@ const Classes = () => {
   };
 
   return (
-    <section className="p-4 sm:p-6 md:p-8 w-full bg-[#F7D9BC] text-black"> {/* Adjusted overall padding */}
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em' }}> {/* Responsive font size for title */}
+    // Attach the forwarded ref 'ref' to the outermost section element
+    <section ref={ref} className="p-4 sm:p-6 md:p-8 w-full bg-[#F7D9BC] text-black">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em' }}>
         Classes / Events
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full max-w-6xl mx-auto"> {/* Adjusted gap */}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full max-w-6xl mx-auto">
         {/* Left Column: Selection Controls + Class Schedule */}
         <div className="w-full md:w-1/2 flex flex-col space-y-4">
           {/* Select Place */}
@@ -129,8 +132,8 @@ const Classes = () => {
           </select>
 
           {/* Class Schedule Display */}
-          <div className="w-full bg-white rounded-xl p-3 sm:p-4 overflow-y-auto shadow-lg mt-4" style={{ maxHeight: '400px' }}> {/* Responsive padding */}
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black"> {/* Responsive font size for schedule header */}
+          <div className="w-full bg-white rounded-xl p-3 sm:p-4 overflow-y-auto shadow-lg mt-4" style={{ maxHeight: '400px' }}>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black">
               {getHeaderText()}
             </h3>
             {filteredClasses.length > 0 ? (
@@ -138,11 +141,11 @@ const Classes = () => {
                 {filteredClasses.map((cls, index) => (
                   <li key={index} className="bg-gray-800 p-3 rounded-md flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-md">
                     <div>
-                      <p className="text-base sm:text-lg font-medium text-white">{cls.name}</p> {/* Responsive font size */}
-                      <p className="text-xs sm:text-sm text-gray-300">{cls.time}</p> {/* Responsive font size */}
+                      <p className="text-base sm:text-lg font-medium text-white">{cls.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-300">{cls.time}</p>
                     </div>
                     <div className="mt-2 sm:mt-0 text-right">
-                      <p className="text-sm text-gray-400">Instr: {cls.instructor}</p> {/* Responsive font size */}
+                      <p className="text-sm text-gray-400">Instr: {cls.instructor}</p>
                       {!(selectedPlace && selectedDay) && (
                         <p className="text-xs text-gray-500 mt-1">{cls.day} at {cls.location}</p>
                       )}
@@ -151,7 +154,7 @@ const Classes = () => {
                 ))}
               </ul>
             ) : (
-              <p className="text-sm sm:text-base text-gray-400"> {/* Responsive font size */}
+              <p className="text-sm sm:text-base text-gray-400">
                 {getEmptyMessage()}
               </p>
             )}
@@ -159,8 +162,8 @@ const Classes = () => {
         </div>
 
         {/* Right Column: Events Card */}
-        <div className="w-full md:w-1/2 bg-white rounded-xl p-3 sm:p-4 shadow-lg flex flex-col space-y-4" style={{ maxHeight: '350px' }}> {/* Responsive padding */}
-          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black"> {/* Responsive font size for events header */}
+        <div className="w-full md:w-1/2 bg-white rounded-xl p-3 sm:p-4 shadow-lg flex flex-col space-y-4" style={{ maxHeight: '350px' }}>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black">
             Events
           </h3>
           <div className="overflow-y-auto space-y-4">
@@ -173,7 +176,7 @@ const Classes = () => {
                 />
                 {event.status === 'closed' && (
                   <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
-                    <p className="text-white text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider">CLOSED</p> {/* Responsive font size */}
+                    <p className="text-white text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider">CLOSED</p>
                   </div>
                 )}
               </div>
@@ -183,6 +186,6 @@ const Classes = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Classes;
