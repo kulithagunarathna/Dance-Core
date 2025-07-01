@@ -25,7 +25,7 @@ const HomePage = ({ setActivePage }) => {
     const params = new URLSearchParams(location.search);
     const notFoundQuery = params.get('notFound');
 
-    setNotFoundMessage(null);
+    setNotFoundMessage(null); // Clear any previous message first
     let timeoutId;
 
     if (location.hash === '#merch-section' && merchRef.current) {
@@ -62,15 +62,15 @@ const HomePage = ({ setActivePage }) => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-black w-full">
+      {/* This div now contains BOTH the NavBar and the sticky notFoundMessage */}
       <div className="sticky top-0 z-50 w-full">
         <NavBar setActivePage={setActivePage} />
+        {notFoundMessage && ( // Display not found message if present
+          <div className="w-full bg-red-800 text-white p-4 text-center text-lg md:text-xl font-semibold">
+            {notFoundMessage}
+          </div>
+        )}
       </div>
-
-      {notFoundMessage && (
-        <div className="w-full bg-red-800 text-white p-4 text-center text-lg md:text-xl font-semibold">
-          {notFoundMessage}
-        </div>
-      )}
 
       <section
         className="relative w-full h-[calc(100vw*3/4)] md:h-[80vh] lg:h-[60vh] bg-gray-800 flex justify-center shadow-lg mt-0 pt-0"
@@ -104,11 +104,10 @@ const HomePage = ({ setActivePage }) => {
           </p>
         </div>
 
-        {/* MODIFIED: Email link */}
         <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
           <FontAwesomeIcon icon={faEnvelope} />{' '}
           <a
-            href="mailto:studiodancecore@gmail.com" // Mailto link
+            href="mailto:studiodancecore@gmail.com"
             className="text-blue-500 hover:underline"
             aria-label="Send email to studiodancecore@gmail.com"
           >
@@ -116,13 +115,12 @@ const HomePage = ({ setActivePage }) => {
           </a>
         </p>
 
-        {/* MODIFIED: WhatsApp link */}
         <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
           <FontAwesomeIcon icon={faWhatsapp} />{' '}
           <a
-            href="https://wa.me/94713161550" // WhatsApp link (using Sri Lanka country code 94)
-            target="_blank" // Open in a new tab
-            rel="noopener noreferrer" // Security best practice
+            href="https://wa.me/94713161550"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-500 hover:underline"
             aria-label="Chat on WhatsApp with 0713161550"
           >
