@@ -16,28 +16,31 @@ const NewsPage = () => {
       id: 'news-3',
       imageUrl: julyIntake,
       title: 'July Intake',
-      description: 'July Intake for New Students is now open!\nJoin us for an exciting journey in dance. Enroll now to secure your spot!\nEvery Saturday - 10:00 AM to 12:00 PM\nAdmission Fee: Rs. 5000\nMonthly Fee: Rs. 1000\nMothly Fee: Rs. 2000',
-      date: '2025/07',
-      time: '',
-      location: 'Studio Dance Core, SHELDAN INTERNATIONA SCHOOL - Malabe',
+      description: 'July Intake for New Students is now open!\n' +
+      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n'+
+      'Every Saturday - 10:00 AM to 12:00 PM\n'+
+      'Location: Studio Dance Core, Shelidian International School, wava Road, Malabe\n'+
+      'Admission Fee: Rs. 1000\n'+
+      'Mothly Fee: Rs. 2000',
     },
     {
       id: 'news-1',
       imageUrl: freeDanceWorkshopImage2,
       title: 'FREE DAY',
-      description: 'Every Month Last Day - Free Day',
-      date: '2025',
-      time: '',
-      location: 'Studio Dance Core, SHELDAN INTERNATIONA SCHOOL - Malabe',
+      description: 'Every Month Last Day - Free Day\n' +
+      'Date: June 28, 2025\n' +
+      'Time: 10:00 AM - 12:00 PM\n' +
+      'Location: Studio Dance Core, Shelidian International School, wava Road, Malabe\n',
     },
     {
       id: 'news-2',
       imageUrl: freeDanceWorkshopImage,
       title: 'Free Dance Workshop!',
-      description: 'Join us for a fantastic free dance workshop this Saturday, July 5, 2025, at our Kalutara studio!\nLearn basic choreography and meet our instructors. All skill levels welcome.',
-      date: 'July 5, 2025',
-      time: '10:00 AM - 12:00 PM',
-      location: 'Studio Dance Core, Kalutara',
+      description: 'Join us for a fantastic free dance workshop this Saturday, July 5, 2025, at our Kalutara studio!\n'+
+      'Learn basic choreography and meet our instructors. All skill levels welcome.\n' +
+      'date: May 16, 2025\n' +
+      'time: 02:00 PM - 05:00 PM\n' +
+      'Location: Studio Dance Core, Kalutara',
     }
   ];
 

@@ -27,3 +27,10 @@ body {
   font-style: normal;
   font-display: swap; /* Improves performance by showing fallback text first */
 }
+@font-face {
+  font-family: "Bebas Neue";
+  src: url('./assets/fonts/BebasNeue-Regular.ttf') format('opentype'); /* Use 'opentype' for .otf */
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; /* Improves performance by showing fallback text first */
+}

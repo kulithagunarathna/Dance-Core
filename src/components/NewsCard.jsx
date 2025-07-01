@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewsCard = ({ imageUrl, title, description, date, time, location }) => {
+const NewsCard = ({ imageUrl, title, description,}) => {
   return (
     <div className="p-4 sm:p-6 bg-white rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
       {/* News Image */}
@@ -23,9 +23,7 @@ const NewsCard = ({ imageUrl, title, description, date, time, location }) => {
         <p className="text-sm sm:text-base text-gray-700 mb-2" style={{ whiteSpace: 'pre-line' }}>
           {description}
         </p>
-        <p className="text-xs sm:text-sm text-gray-500">
-          Date: {date} | Time: {time} | Location: {location}
-        </p>
+        
         {/* Optional: Add a button for 'Read More' or 'Register' */}
         {/* <button className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">Read More</button> */}
       </div>
