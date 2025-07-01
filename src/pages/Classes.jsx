@@ -100,7 +100,7 @@ const Classes = forwardRef((props, ref) => { // 'ref' is the second argument fro
         Classes / Events
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full max-w-6xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 w-full max-w-7xl mx-auto">
         {/* Left Column: Selection Controls + Class Schedule */}
         <div className="w-full md:w-1/2 flex flex-col space-y-4">
           {/* Select Place */}
@@ -162,7 +162,7 @@ const Classes = forwardRef((props, ref) => { // 'ref' is the second argument fro
         </div>
 
         {/* Right Column: Events Card */}
-        <div className="w-full md:w-1/2 bg-white rounded-xl p-3 sm:p-4 shadow-lg flex flex-col space-y-4" style={{ maxHeight: '350px' }}>
+        <div className="w-full md:w-1/2 bg-white rounded-xl p-3 sm:p-4 shadow-lg flex flex-col space-y-4" style={{ maxHeight: '500px' }}>
           <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4 text-black">
             Events
           </h3>

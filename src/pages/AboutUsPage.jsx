@@ -9,6 +9,7 @@ import sandevFront from '../assets/images/profiles/sandev.webp';
 import hasinduFront from '../assets/images/profiles/hasindu.webp';
 import hiviruFront from '../assets/images/profiles/dilneth.webp';
 import tasinduFront from '../assets/images/profiles/tasindu.webp';
+import shivaFront from '../assets/images/profiles/shiva.webp';
 
 // Import your background image
 import backgroundImage from '../assets/images/bg.webp'; // <--- IMPORTANT: Update this path to your background image
@@ -84,6 +85,16 @@ const AboutUsPage = () => (
         ]}
         imageUrl={tasinduFront}
         instagramUrl="https://www.instagram.com/taziii_2004?igsh=MW41YjVrbmJoNDV5Zw=="
+      />
+
+      {/* Person 6: SHIVANKARA ARAVINDA */}
+      <PersonProfileCard
+        name="SHIVANKARA ARAVINDA"
+        roles={[
+          "HOST"
+        ]}
+        imageUrl={shivaFront}
+        instagramUrl="https://www.instagram.com/shivankara_aravinda?igsh=MThjNDB6NHBldnpsbg%3D%3D&utm_source=qr"
       />
     </div>
   </div>
