@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import heroVideo from '../assets/videos/home.mp4';
+// Make sure you have home.webm in this directory too!
+import heroVideoMp4 from '../assets/videos/home.mp4';
+import heroVideoWebm from '../assets/videos/home.webm'; // NEW: Import the .webm version
 import logo from '../assets/images/logo.webp';
 import Productions from './Productions';
 import Merch from './Merch';
@@ -62,10 +64,9 @@ const HomePage = ({ setActivePage }) => {
 
   return (
     <div className="flex flex-col items-center justify-center bg-black w-full">
-      {/* This div now contains BOTH the NavBar and the sticky notFoundMessage */}
       <div className="sticky top-0 z-50 w-full">
         <NavBar setActivePage={setActivePage} />
-        {notFoundMessage && ( // Display not found message if present
+        {notFoundMessage && (
           <div className="w-full bg-red-800 text-white p-4 text-center text-lg md:text-xl font-semibold">
             {notFoundMessage}
           </div>
@@ -77,14 +78,17 @@ const HomePage = ({ setActivePage }) => {
       >
         <video
           className="absolute w-full h-full object-cover opacity-100"
-          src={heroVideo}
           autoPlay
           loop
           muted
           playsInline
           title="Studio Dance Core"
-          poster={logo}
+          poster={logo} // Poster image for video before it loads
         >
+          {/* NEW: Source for WebM first (often smaller file size) */}
+          <source src={heroVideoWebm} type="video/webm" />
+          {/* Keep MP4 as a fallback for broader compatibility */}
+          <source src={heroVideoMp4} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </section>

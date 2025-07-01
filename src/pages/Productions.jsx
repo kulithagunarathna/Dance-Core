@@ -1,7 +1,9 @@
-// src/components/Productions.jsx
-import React, { forwardRef } from 'react'; // Already correctly imported and used
+// src/pages/Productions.jsx
+import React, { forwardRef } from 'react';
 
-import productionsBannerVideo from '../assets/videos/manoloka.mp4';
+// Corrected paths: video files are in '../assets/videos/' relative to src/pages/
+import productionsBannerVideoMp4 from '../assets/videos/manoloka.mp4'; // Reverted path
+import productionsBannerVideoWebm from '../assets/videos/manoloka.webm'; // Reverted path
 
 // Import your local images
 import manoloka from '../assets/images/manoloka_theBeginning.webp';
@@ -79,13 +81,14 @@ const Productions = forwardRef((props, ref) => {
             <div className="bg-orange-200 rounded-xl overflow-hidden h-full flex items-center justify-center">
               <video
                 className="w-full h-full object-cover"
-                src={productionsBannerVideo}
                 autoPlay
                 loop
                 muted
                 playsInline
                 title="Manoloka"
               >
+                <source src={productionsBannerVideoWebm} type="video/webm" />
+                <source src={productionsBannerVideoMp4} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
