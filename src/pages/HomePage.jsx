@@ -6,8 +6,10 @@ import Merch from './Merch'; // Import the Merch component
 import Classes from './Classes'; // Import the new Classes component
 import AboutUsPage from './AboutUsPage'; // Import the AboutUsPage component
 import NavBar from '../components/NavBar'; // Import the NavBar component
-import { ArrowDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp, } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage = ({ setActivePage }) => {
   const productionsRef = useRef(null);
@@ -61,8 +63,16 @@ const HomePage = ({ setActivePage }) => {
         <div className="flex items-center justify-center p-4">
           <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
             We are creating meaningful and enjoyable products for our audience. We are also training our younger generation through our Studio Dance Core classes.
-          </p>
+          </p>         
         </div>
+
+        <p className="text-base md:text-lg text-gray-600 text-center flex-grow text-justify max-w-2xl">
+        <FontAwesomeIcon icon={faEnvelope} /> <a href="#" className="text-blue-500 hover:underline"> studiodancecore@gmail.com </a>
+        </p>
+
+        <p>
+        <FontAwesomeIcon icon={faWhatsapp} /> 0713161550
+        </p>
         <br />
         <br />
 

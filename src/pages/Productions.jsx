@@ -42,10 +42,10 @@ const Productions = forwardRef((props, ref) => {
   const videos = [
     { id: 'manoloka-01', imageUrl: manoloka, title: 'Manoloka Episode 01 - THE BEGINNING', videoUrl: 'https://youtu.be/4B_bPZ_9v2o'},
     { id: 'thePodcast', imageUrl: thePodcast, title: 'Coming Soon', videoUrl: '#'},
-    { id: 'soon-02', imageUrl: soon2, title: 'Coming Soon: Production 2', videoUrl: '#'},
-    { id: 'soon-03', imageUrl: soon3, title: 'Coming Soon: Production 3', videoUrl: '#'},
-    { id: 'soon-04', imageUrl: soon4, title: 'Coming Soon: Production 4', videoUrl: '#'},
-    { id: 'soon-05', imageUrl: soon5, title: 'Coming Soon: Production 5', videoUrl: '#'},
+    { id: 'soon-02', imageUrl: soon2, title: 'Coming Soon: Production 2'},
+    { id: 'soon-03', imageUrl: soon3, title: 'Coming Soon: Production 3'},
+    { id: 'soon-04', imageUrl: soon4, title: 'Coming Soon: Production 4'},
+    { id: 'soon-05', imageUrl: soon5, title: 'Coming Soon: Production 5'},
   ];
 
   return (

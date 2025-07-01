@@ -13,7 +13,7 @@ import merchScarf from "../assets/images/scarf_soon.webp";
 const MerchCard = ({ item, url }) => (
   // Adjusted width (w-48 sm:w-56 md:w-64) and height (h-56 sm:h-64 md:h-72) for responsiveness
   // Adjusted horizontal margin (mx-2 sm:mx-3 md:mx-4) for spacing
-  <div className="flex-shrink-0 w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-72 bg-white rounded-xl shadow-lg p-3 sm:p-4 flex flex-col justify-between items-center text-center mx-2 sm:mx-3 md:mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
+  <div className="flex-shrink-0 w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-75 bg-white rounded-xl shadow-lg p-3 sm:p-4 flex flex-col justify-between items-center text-center mx-2 sm:mx-3 md:mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.name}`}>
       <img
         src={item.image}
