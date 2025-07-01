@@ -2,8 +2,8 @@
 import React, { forwardRef } from 'react';
 
 // Corrected paths: video files are in '../assets/videos/' relative to src/pages/
-import productionsBannerVideoMp4 from '../assets/videos/manoloka.mp4'; // Reverted path
-import productionsBannerVideoWebm from '../assets/videos/manoloka.webm'; // Reverted path
+import productionsBannerVideoMp4 from '../assets/videos/Manoloka.mp4'; // Reverted path
+import productionsBannerVideoWebm from '../assets/videos/Manoloka.webm'; // Reverted path
 
 // Import your local images
 import manoloka from '../assets/images/manoloka_theBeginning.webp';

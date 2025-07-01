@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 // Make sure you have home.webm in this directory too!
-import heroVideoMp4 from '../assets/videos/home.mp4';
-import heroVideoWebm from '../assets/videos/home.webm'; // NEW: Import the .webm version
+import heroVideoMp4 from '../assets/videos/Home.mp4';
+import heroVideoWebm from '../assets/videos/Home.webm'; // NEW: Import the .webm version
 import logo from '../assets/images/logo.webp';
 import Productions from './Productions';
 import Merch from './Merch';
