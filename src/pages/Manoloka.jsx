@@ -37,7 +37,7 @@ const VideoCard = ({ imageUrl, title, videoUrl }) => (
 const Manoloka = () => {
     const videos = [
       { id: 'manoloka-01', imageUrl: manoloka, title: 'Manoloka Episode 01 - THE BEGINNING', videoUrl: 'https://youtu.be/4B_bPZ_9v2o'},
-      { id: 'thePodcast', imageUrl: thePodcast, title: 'Coming Soon', videoUrl: 'https://youtu.be/mzWVjaS893U?si=8EkuvQxfj0Up5qHZ'},
+      { id: 'thePodcast', imageUrl: thePodcast, title: 'The Podcast - Episode 01', videoUrl: 'https://youtu.be/mzWVjaS893U?si=8EkuvQxfj0Up5qHZ'},
       { id: 'soon-02', imageUrl: soon2, title: 'Coming Soon: Production 2'},
       { id: 'soon-03', imageUrl: soon3, title: 'Coming Soon: Production 3'},
       { id: 'soon-04', imageUrl: soon4, title: 'Coming Soon: Production 4'},
