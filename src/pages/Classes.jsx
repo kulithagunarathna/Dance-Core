@@ -95,8 +95,8 @@ const Classes = forwardRef((props, ref) => { // 'ref' is the second argument fro
 
   return (
     // Attach the forwarded ref 'ref' to the outermost section element
-    <section ref={ref} className="p-4 sm:p-6 md:p-8 w-full bg-[#F7D9BC] text-black">
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em' }}>
+    <section ref={ref} className="p-4 sm:p-6 md:p-8 w-full bg-[#EFD09E] text-black">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 uppercase text-center" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#272727' }}>
         Classes / Events
       </h2>
 

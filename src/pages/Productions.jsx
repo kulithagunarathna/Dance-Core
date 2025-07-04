@@ -49,7 +49,7 @@ const Productions = forwardRef((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="p-4 sm:p-6 md:p-8 w-full bg-black text-white min-h-[600px] md:h-[913px] flex flex-col">
+    <section ref={ref} className="p-4 sm:p-6 md:p-8 w-full bg-[#272727] text-white min-h-[600px] md:h-[913px] flex flex-col">
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 8px;
@@ -72,7 +72,7 @@ const Productions = forwardRef((props, ref) => {
         }
       `}</style>
       
-      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-left uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFDBBB' }}>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-center uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#EFD09E' }}>
         Productions
       </h2>
       <div className="flex flex-col md:flex-row gap-6 md:gap-8 flex-grow overflow-x-hidden">

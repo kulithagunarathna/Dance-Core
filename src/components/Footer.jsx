@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => (
-  <footer className="bg-stone-950 text-white p-6 md:p-8 shadow-inner">
+  <footer className="bg-[#272727] text-white p-6 md:p-8 shadow-inner">
     <div className="container mx-auto text-center">
       <p className="mb-3 text-sm md:text-base">© {new Date().getFullYear()} Dance Studio Core. All rights reserved.</p>
       <div className="flex justify-center space-x-4 md:space-x-6 text-xl md:text-2xl">

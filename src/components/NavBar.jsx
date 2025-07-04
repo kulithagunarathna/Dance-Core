@@ -26,6 +26,8 @@ const NavBar = ({ setActivePage }) => {
       navigate('/#classes-section');
     } else if (lowerCaseSearchTerm.includes('about us') || lowerCaseSearchTerm.includes('who we are') || lowerCaseSearchTerm === 'about') { // MODIFIED: Added 'lowerCaseSearchTerm === 'about''
         navigate('/#about-us-section');
+    } else if (lowerCaseSearchTerm === 'class videos' || lowerCaseSearchTerm === 'class video') {
+      navigate('/#class-videos-section');
     }
     else {
       navigate(`/?notFound=${encodeURIComponent(searchTerm)}`);
@@ -36,7 +38,7 @@ const NavBar = ({ setActivePage }) => {
   };
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 py-3 md:px-8 md:py-4 bg-black backdrop-blur-none relative z-50">
+    <nav className="w-full flex items-center justify-between px-4 py-3 md:px-8 md:py-4 bg-[#272727] backdrop-blur-none relative z-50">
       <div className="flex items-center">
         <Link to="/" aria-label="Go to Home Page" className="block w-[80px] md:w-[100px] h-auto">
           <img src={logo} alt="Studio Dance Core Logo" className="max-w-full h-auto" />
@@ -60,7 +62,7 @@ const NavBar = ({ setActivePage }) => {
       <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
         <Link
           to="/about-us"
-          className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-base lg:text-lg font-medium group"
+          className="flex items-center text-white hover:text-[#EFD09E] transition-colors duration-200 text-base lg:text-lg font-medium group"
           aria-label="Go to About Us Page"
           style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
           onClick={() => { setActivePage('/about-us'); }}
@@ -70,7 +72,7 @@ const NavBar = ({ setActivePage }) => {
         </Link>
         <Link
           to="/news"
-          className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-base lg:text-lg font-medium group"
+          className="flex items-center text-white hover:text-[#EFD09E] transition-colors duration-200 text-base lg:text-lg font-medium group"
           aria-label="Go to News Page"
           style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
           onClick={() => { setActivePage('/news'); }}
@@ -83,7 +85,7 @@ const NavBar = ({ setActivePage }) => {
           <input
             type="text"
             placeholder="Search..."
-            className="px-3 py-1.5 pl-9 rounded-full bg-opacity-20 bg-gray-600 text-white placeholder-white outline-none focus:ring-2 focus:ring-[#FFDBBB] transition-all duration-200 w-36 md:w-48 text-sm"
+            className="px-3 py-1.5 pl-9 rounded-full bg-opacity-20 bg-gray-600 text-white placeholder-white outline-none focus:ring-2 focus:ring-[#EFD09E] transition-all duration-200 w-36 md:w-48 text-sm"
             aria-label="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

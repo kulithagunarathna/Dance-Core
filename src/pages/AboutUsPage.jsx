@@ -24,8 +24,8 @@ const AboutUsPage = () => (
       <NavBar setActivePage='about-us' />
     </div>
 
-    <div className="py-4 sm:py-5 text-center border-b-2 border-gray-800 bg-opacity-70"> {/* Added bg-opacity to make text readable over background */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl tracking-widest md:text-6xl lg:text-7xl" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFFF' }}>
+    <div className="py-4 sm:py-5 text-center bg-[#EFD09E]"> {/* Added bg-opacity to make text readable over background */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl tracking-widest md:text-6xl lg:text-7xl" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#272727', fontWeight: 'bold' }}>
         DANCE CORE HIGHER FAMILY
       </h1>
     </div>

@@ -49,7 +49,7 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
 
   return (
     // Attach the forwarded ref 'ref' to the outermost section element
-    <section ref={ref} className="w-full p-4 sm:p-6 md:p-8 bg-[#54463a] text-white min-h-[400px] md:h-[500px] flex flex-col justify-center">
+    <section ref={ref} className="w-full p-4 sm:p-6 md:p-8 bg-[#D4AA7D] text-white min-h-[400px] md:h-[500px] flex flex-col justify-center">
       <style>{`
         /* Webkit browsers (Chrome, Safari, Edge) */
         .merch-scroll-container::-webkit-scrollbar {
@@ -85,7 +85,7 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
         }
       `}</style>
 
-      <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 sm:mb-8 text-center sm:text-left uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#FFDBBB' }}>
+      <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 sm:mb-8 text-center sm:text-center uppercase" style={{ fontFamily: "'MetroPhotograph - Demo Version Regular'", letterSpacing: '0.1em', color: '#272727' }}>
         Merch
       </h2>
       <div
