@@ -33,7 +33,7 @@ const PersonProfileCard = ({ name, roles, imageUrl, instagramUrl }) => {
         </div>
 
         {/* Details Card */}
-        <div className="bg-[#D4AA7D] p-6 sm:p-8 rounded-xl shadow-xl text-gray-800 w-full max-w-sm sm:max-w-md md:max-w-lg"> {/* Adjusted padding and max-width */}
+        <div className="bg-[#EFD09E] p-6 sm:p-8 rounded-xl shadow-xl text-[#272727] w-full max-w-sm sm:max-w-md md:max-w-lg"> {/* Adjusted padding and max-width */}
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight text-[#272727]"> {/* Responsive font sizes and margin */}
             {name}
           </h2>
