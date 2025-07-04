@@ -5,7 +5,7 @@ import { faFacebook, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-
 const Footer = () => (
   <footer className="bg-[#272727] text-white p-6 md:p-8 shadow-inner">
     <div className="container mx-auto text-center">
-      <p className="mb-3 text-sm md:text-base">© {new Date().getFullYear()} Dance Studio Core. All rights reserved.</p>
+      <p className="mb-3 text-sm md:text-base">© {new Date().getFullYear()} Studio Dance Core. All rights reserved.</p>
       <div className="flex justify-center space-x-4 md:space-x-6 text-xl md:text-2xl">
         {/* Facebook Icon */}
         <a href="https://www.facebook.com/share/1Gb77cwMaG" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-500 transition duration-300" aria-label="Facebook">
