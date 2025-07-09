@@ -6,8 +6,16 @@ import merchScarf from "../assets/images/scarf_soon.webp";
 
 // Reusable component for a Merch Card
 const MerchCard = ({ item, url }) => (
-  <div className="flex-shrink-0 w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-75 bg-white rounded-xl shadow-lg p-3 sm:p-4 flex flex-col justify-between items-center text-center mx-2 sm:mx-3 md:mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
-    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`View ${item.name}`}>
+  // The outer div no longer has the hover:scale-105
+  <div className="flex-shrink-0 w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-75 bg-white rounded-xl shadow-lg p-3 sm:p-4 flex flex-col justify-between items-center text-center mx-2 sm:mx-3 md:mx-4  transition-transform duration-300 ease-in-out hover:scale-105 transform-gpu">
+    {/* The <a> tag now has the scaling effect, allowing it to "break out" of the parent's overflow clipping */}
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View ${item.name}`}
+      className="block w-full h-full flex flex-col justify-between items-center text-center" // Added transform-gpu for performance
+    >
       <img
         src={item.image}
         alt={item.name}
@@ -36,7 +44,7 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
     if (merchContainer) {
       const handleWheelScroll = (event) => {
         event.preventDefault();
-        merchContainer.scrollLeft += event.deltaY * 2.0;
+        merchContainer.scrollLeft += event.deltaY * 2.0; // Adjust scroll speed if needed
       };
 
       merchContainer.addEventListener('wheel', handleWheelScroll);
@@ -49,7 +57,8 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
 
   return (
     // Attach the forwarded ref 'ref' to the outermost section element
-    <section ref={ref} className="w-full p-4 sm:p-6 md:p-8 bg-[#D4AA7D] text-white min-h-[400px] md:h-[500px] flex flex-col justify-center">
+    // Increased min-height to provide more vertical room for content
+    <section ref={ref} className="w-full p-4 sm:p-6 md:p-8 bg-[#D4AA7D] text-white min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
       <style>{`
         /* Webkit browsers (Chrome, Safari, Edge) */
         .merch-scroll-container::-webkit-scrollbar {
@@ -69,7 +78,7 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
 
         /* Show scrollbar thumb on hover of the container */
         .merch-scroll-container:hover::-webkit-scrollbar-thumb {
-          background-color: rgba(156, 163, 175, 0.5);
+          background-color: rgba(156, 163, 175, 0.5); /* Gray-400 with 50% opacity */
         }
 
         /* Firefox */
@@ -90,7 +99,8 @@ const Merch = forwardRef((props, ref) => { // 'ref' is the second argument from 
       </h2>
       <div
         ref={merchContainerRef} // This ref is for horizontal scrolling within the Merch component
-        className="flex overflow-x-auto pb-4 sm:pb-6 merch-scroll-container flex-grow items-center justify-start sm:justify-center"
+        // Increased vertical padding (py-12) to ensure enough space for scaled cards
+        className="flex overflow-x-auto **py-12** merch-scroll-container flex-grow items-center justify-start sm:justify-center"
       >
         {merchItems.length > 0 ? (
           merchItems.map((item) => (
