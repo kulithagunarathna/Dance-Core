@@ -6,12 +6,19 @@ import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
 import Manoloka from './pages/Manoloka';
 import NewsPage from './pages/NewsPage';
-import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
+import ScrollToTop from './components/ScrollToTop';
+// Import the admin components
+import { AdminLayout } from './admin/Adminlayout';
+import { LoginPage } from './admin/LoginPage';
+import { AdminDashboardPage } from './admin/AdminDashboardPage';
+import { AddClassesPage } from './admin/AddClassesPage';
+import { AddNewspage } from './admin/AddNewspage';
+import { AddProductPages } from './admin/AddProductPages';
+import { AddMerchpage } from './admin/AddMerch';
 
 const App = () => {
-
   const [activePage, setActivePage] = useState('home');
-  
+
   return (
     <>
       <Router>
@@ -21,9 +28,16 @@ const App = () => {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/manoloka" element={<Manoloka />} />
           <Route path="/news" element={<NewsPage />} />
+          
+          <Route path="/admin" element={<LoginPage />} /> 
+          <Route path="/admin/dashboard" element={<AdminLayout><AdminDashboardPage /></AdminLayout>} />
+          <Route path="/admin/add-classes" element={<AdminLayout><AddClassesPage /></AdminLayout>} />
+          <Route path="/admin/add-news" element={<AdminLayout><AddNewspage /></AdminLayout>} />
+          <Route path="/admin/add-products" element={<AdminLayout><AddProductPages /></AdminLayout>} />
+          <Route path="/admin/add-merch" element={<AdminLayout><AddMerchpage /></AdminLayout>} />
         </Routes>
       </Router>
-        <Footer />
+      <Footer />
     </>
   );
 };
