@@ -6,12 +6,24 @@ import NewsCard from '../components/NewsCard.jsx';
 import freeDanceWorkshopImage from '../assets/images/events/event-1.webp';
 import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
 import julyIntake from '../assets/images/events/julyIntake.webp';
+import augestIntake from '../assets/images/events/audust-new-intake.webp';
 
 // Import your background image
 import backgroundImage from '../assets/images/bg.webp'; // Make sure this path is correct
 
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-4',
+      imageUrl: augestIntake,
+      title: 'Augest Intake',
+      description: 'Augest Intake for New Students is now open!\n' +
+      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n'+
+      'Every Saturday - 10:00 AM to 12:00 PM\n'+
+      'Location: Studio Dance Core, Shelidian International School, wava Road, Malabe\n'+
+      'Admission Fee: Rs. 1000\n'+
+      'Mothly Fee: Rs. 2000',
+    },
     {
       id: 'news-3',
       imageUrl: julyIntake,
