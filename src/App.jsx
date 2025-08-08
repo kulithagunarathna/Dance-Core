@@ -15,6 +15,7 @@ import { AddClassesPage } from './admin/AddClassesPage';
 import { AddNewspage } from './admin/AddNewspage';
 import { AddProductPages } from './admin/AddProductPages';
 import { AddMerchpage } from './admin/AddMerch';
+import ArtistsPage from './pages/Artists';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/manoloka" element={<Manoloka />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/artists" element={<ArtistsPage />} />
           
           <Route path="/admin" element={<LoginPage />} /> 
           <Route path="/admin/dashboard" element={<AdminLayout><AdminDashboardPage /></AdminLayout>} />
