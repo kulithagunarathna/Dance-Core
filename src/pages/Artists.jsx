@@ -28,7 +28,7 @@ const ArtistsPage = () => {
   // A list of artists with their image URLs, names, and descriptions.
   // You should replace these with your actual artist data.
   const artists = [
-    { id: 1, name: "Jayaruwan", description: "Sculptor", imageUrl: {Jayaruwan} },
+    { id: 1, name: "Jayaruwan", description: "Sculptor", imageUrl: Jayaruwan },
     { id: 2, name: "Artist Two", description: "Painter", imageUrl: "https://placehold.co/400x400/94a3b8/e2e8f0?text=Artist+2" },
     { id: 3, name: "Artist Three", description: "Photographer", imageUrl: "https://placehold.co/400x400/94a3b8/e2e8f0?text=Artist+3" },
     { id: 4, name: "Artist Four", description: "Designer", imageUrl: "https://placehold.co/400x400/94a3b8/e2e8f0?text=Artist+4" },
