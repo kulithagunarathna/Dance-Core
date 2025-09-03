@@ -8,10 +8,22 @@ import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
 import julyIntake from '../assets/images/events/julyIntake.webp';
 import augestIntake from '../assets/images/events/audust-new-intake.webp';
 import rathworkshop from '../assets/images/events/WORKSHOP-3.webp'
+import sepIntake from '../assets/images/events/sep.webp';
 
 // Import your background image
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-6',
+      imageUrl: sepIntake,
+      title: 'September Intake',
+      description: 'September Intake for New Students is now open!\n' +
+      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n'+
+      'Every Saturday - 10:00 AM to 12:00 PM\n'+
+      'Location: Studio Dance Core, Shelidian International School, wava Road, Malabe\n'+
+      'Admission Fee: Rs. 1000\n'+
+      'Mothly Fee: Rs. 2000',
+    },
     {
       id: 'news-5',
       imageUrl: rathworkshop,
