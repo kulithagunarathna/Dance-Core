@@ -7,10 +7,21 @@ import freeDanceWorkshopImage from '../assets/images/events/event-1.webp';
 import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
 import julyIntake from '../assets/images/events/julyIntake.webp';
 import augestIntake from '../assets/images/events/audust-new-intake.webp';
+import rathworkshop from '../assets/images/events/WORKSHOP-3.webp'
 
 // Import your background image
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-5',
+      imageUrl: rathworkshop,
+      title: 'K FLEC DANCE X STUDIO DANCE CORE WORKSHOP',
+      description: 'Free Dance workshop Aleart!\n\n' +
+      'K Flex Dance X Studio Dance Core colloberation workshop is going to be held in Rathnapura\n\n'+
+      'Location: Rathnapura vatarauma Road, Bees Academy\n'+
+      'Artists: Kehansa Hansale, Jayaruwan Prabodya, Timal Damian\n'+
+      'The Event is completely FREE!',
+    },
     {
       id: 'news-4',
       imageUrl: augestIntake,
