@@ -9,8 +9,7 @@ import LoginPage from './LoginPage';
 
 // Correct import for your new lessons.js file
 import { lessonsData, paidLessonsData } from '../utils/lessons';
-
-
+import { downloadFile } from "../utils/downloadHelper";
 
 // Use forwardRef to allow HomePage to pass a ref to this component
 const LessonsPage = forwardRef((props, ref) => { // 'ref' is the second argument from forwardRef
@@ -48,7 +47,7 @@ const LessonsPage = forwardRef((props, ref) => { // 'ref' is the second argument
     setUser(loggedInUser);
     setShowLogin(false);
   };
-  
+
   // Use useMemo to memoize 'locations' array
   const locations = useMemo(() => Object.keys(classSchedules), []);
 
@@ -155,9 +154,13 @@ const LessonsPage = forwardRef((props, ref) => { // 'ref' is the second argument
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg flex flex-col items-center text-black">
                     <h3 className="text-xl font-semibold mb-4 text-center">{lesson.title}</h3>
                     <p className="text-center text-gray-400 mb-6">Downloadable PDF to learn proper dance.</p>
-                    <a href={lesson.file} download className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition duration-200">
+                    <button
+                      onClick={() => downloadFile(lesson.file, `${lesson.title}.pdf`)}
+                      className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition duration-200"
+                    >
                       Download
-                    </a>
+                    </button>
+
                   </div>
                 ))}
               </div>
