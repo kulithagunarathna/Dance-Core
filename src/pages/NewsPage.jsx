@@ -15,7 +15,7 @@ const NewsPage = () => {
     {
       id: 'news-5',
       imageUrl: rathworkshop,
-      title: 'K FLEC DANCE X STUDIO DANCE CORE WORKSHOP',
+      title: 'K FLEX DANCE X STUDIO DANCE CORE WORKSHOP',
       description: 'Free Dance workshop Aleart!\n\n' +
       'K Flex Dance X Studio Dance Core colloberation workshop is going to be held in Rathnapura\n\n'+
       'Location: Rathnapura vatarauma Road, Bees Academy\n'+
