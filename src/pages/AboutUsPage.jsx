@@ -49,8 +49,8 @@ const AboutUsPage = () => (
               ]}
               imageUrl={jayaruwanFront}
               instagramUrl="https://www.instagram.com/jayaruwan.official?igsh=M3VkYjdjb3p5bjU2"
-              facebookUrl="#" // Placeholder link
-              youtubeUrl="#" // Placeholder link
+              //facebookUrl="#" // Placeholder link
+              //youtubeUrl="#" // Placeholder link
               isReversed={false} // Default layout
             />
 
@@ -63,7 +63,7 @@ const AboutUsPage = () => (
               ]}
               imageUrl={sandevFront}
               instagramUrl="https://www.instagram.com/sandev_ubeysekara?igsh=MXZndWdjcG9vNThqNg=="
-              tiktokUrl="#" // Placeholder link
+              //tiktokUrl="#" // Placeholder link
               isReversed={true} // Reversed layout
             />
 
@@ -87,7 +87,7 @@ const AboutUsPage = () => (
               ]}
               imageUrl={hiviruFront}
               instagramUrl="https://www.instagram.com/_hivzzz_?igsh=OWF5dDIwdHU4a201&utm_source=qr"
-              facebookUrl="#" // Placeholder link
+              //facebookUrl="#" // Placeholder link
               isReversed={true} // Reversed layout
             />
 
@@ -110,8 +110,8 @@ const AboutUsPage = () => (
               ]}
               imageUrl={shivaFront}
               instagramUrl="https://www.instagram.com/shivankara_aravinda?igsh=MThjNDB6NHBldnpsbg%3D%3D&utm_source=qr"
-              tiktokUrl="#" // Placeholder link
-              youtubeUrl="#" // Placeholder link
+              //tiktokUrl="#" // Placeholder link
+              //youtubeUrl="#" // Placeholder link
               isReversed={true} // Reversed layout
             />
           </div>
