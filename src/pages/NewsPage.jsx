@@ -9,10 +9,20 @@ import julyIntake from '../assets/images/events/julyIntake.webp';
 import augestIntake from '../assets/images/events/audust-new-intake.webp';
 import rathworkshop from '../assets/images/events/WORKSHOP-3.webp'
 import sepIntake from '../assets/images/events/sep.webp';
+import wannam from '../assets/images/events/thumb-nail.webp';
 
 // Import your background image
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-7',
+      imageUrl: wannam,
+      title: 'A cinematic dance cover',
+      description: 'traditional dancing styles ( udarata/pahatharata), Indian baratha natyam and western dancing styles.\n'+
+      'Choreographer and Director - Jayaruwan Prabodya\n'+
+      'Dop - Tasindu wikramasinghe / Hiviru Dilneth\n'+
+      'Releasing date - 16/12/2025\n'
+    },
     {
       id: 'news-6',
       imageUrl: sepIntake,

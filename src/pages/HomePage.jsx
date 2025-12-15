@@ -3,7 +3,7 @@ import heroVideoMp4 from '../assets/videos/home.mp4';
 import heroVideoWebm from '../assets/videos/Home.webm';
 import {
   logo, classesandevents, merch, headlogo, bg,
-  lession, productions, moto, bggradiant, rathworkshop
+  lession, productions, moto, bggradiant, wannam
 } from '../utils/config';
 import NavBar from '../components/NavBar';
 
@@ -129,25 +129,23 @@ const HomePage = ({ setActivePage }) => {
             {/* Text Section */}
             <div className="md:w-1/2 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest News</h2>
-              <h3 className="text-xl md:text-2xl font-semibold mb-2">K FLEC DANCE X STUDIO DANCE CORE WORKSHOP!</h3>
-              <p className="text-gray-700 leading-relaxed mb-4 text-justify">
-                Free Dance workshop Aleart!
-              </p>
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">A CINEMATIC DANCE COVER BY STUDIO DANCE CORE</h3>
+              
               <p className="text-gray-700 leading-relaxed text-justify">
-                K Flex Dance X Studio Dance Core colloberation workshop is going to be held in Rathnapura
+                This content included srilankan traditional dancing styles(udarata/pahatharata), Indian baratha natyam and western dancing styles. 
                 <br />
-                Location: Rathnapura vatarauma Road, Bees Academy
+                Choreographer and Director - Jayaruwan Prabodya
                 <br />
-                Artists: Kehansa Hansale, Jayaruwan Prabodya, Timal Damian
+                Dop - Tasindu wikramasinghe / Hiviru Dilneth
                 <br />
-                The Event is completely FREE!
+                Releasing date - 16/12/2025
               </p>
               <a href="/news" className="mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
             </div>
             {/* Image Section */}
             <div className="md:w-1/2 flex justify-center md:justify-end items-center">
               <img
-                src={rathworkshop}
+                src={wannam}
                 alt="Rathnapura workshop"
                 className="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-lg"
               />
