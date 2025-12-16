@@ -17,7 +17,7 @@ const NewsPage = () => {
     {
       id: 'news-7',
       imageUrl: wannam,
-      title: 'A cinematic dance cover',
+      title: 'A CINEMATIC DANCE COVER',
       description: 'traditional dancing styles ( udarata/pahatharata), Indian baratha natyam and western dancing styles.\n'+
       'Choreographer and Director - Jayaruwan Prabodya\n'+
       'Dop - Tasindu wikramasinghe / Hiviru Dilneth\n'+
