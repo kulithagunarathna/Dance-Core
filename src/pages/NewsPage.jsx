@@ -17,11 +17,10 @@ const NewsPage = () => {
     {
       id: 'news-7',
       imageUrl: wannam,
-      title: 'A CINEMATIC DANCE COVER',
+      title: '18 වන්නම් A CINEMATIC DANCE COVER OUT NOW!',
       description: 'traditional dancing styles ( udarata/pahatharata), Indian baratha natyam and western dancing styles.\n'+
       'Choreographer and Director - Jayaruwan Prabodya\n'+
-      'Dop - Tasindu wikramasinghe / Hiviru Dilneth\n'+
-      'Releasing date - 16/12/2025\n'
+      'Dop - Tasindu wikramasinghe / Hiviru Dilneth'
     },
     {
       id: 'news-6',
