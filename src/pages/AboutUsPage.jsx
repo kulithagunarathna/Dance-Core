@@ -4,7 +4,7 @@ import PersonProfileCard from '../components/PersonProfileCard';
 import { bg } from '../utils/config';
 // Import unique images for each person (front and back)
 // ASSUME THESE PATHS AND FILENAMES ARE CORRECT IN YOUR PROJECT
-import jayaruwanFront from '../assets/images/profiles/jayaruwan-prabodya.webp';
+import jayaruwan from '../assets/images/profiles/jaye.webp';
 import sandevFront from '../assets/images/profiles/sandev.webp';
 import hasinduFront from '../assets/images/profiles/hasindu.webp';
 import hiviruFront from '../assets/images/profiles/dilneth.webp';
@@ -49,7 +49,7 @@ const AboutUsPage = () => (
               "CHOREOGRAPHER",
               "FOUNDER OF STUDIO DANCE CORE"
             ]}
-            imageUrl={jayaruwanFront}
+            imageUrl={jayaruwan}
             instagramUrl="https://www.instagram.com/jayaruwan.official?igsh=M3VkYjdjb3p5bjU2"
             //facebookUrl="#" // Placeholder link
             //youtubeUrl="#" // Placeholder link
