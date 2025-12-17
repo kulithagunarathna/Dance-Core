@@ -1,5 +1,5 @@
 import React from 'react';
-import myImage from '../assets/images/18-wannm-details.jpg';
+import myImage from '../assets/images/18-wannam-A-cinematic-dance-cover-by-Studio-Dance-Core-or.jpg';
 
 const Wannam = () => {
   const containerStyle = {

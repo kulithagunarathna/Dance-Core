@@ -131,12 +131,12 @@ const HomePage = ({ setActivePage }) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Production</h2>
               <h3 className="text-xl md:text-2xl font-semibold mb-2">18 වන්නම් A CINEMATIC DANCE COVER</h3>
               <h3 className="text-xl md:text-2xl font-semibold mb-2">OUT NOW!</h3>
-              <p className="text-gray-700 leading-relaxed text-justify">
+              <p className="text-gray-700 leading-relaxed">
                 This content included srilankan traditional dancing styles(udarata/pahatharata), Indian baratha natyam and western dancing styles. 
                 <br />
-                Choreographer and Director - Jayaruwan Prabodya
+                <b>Choreographer and Director -</b> Jayaruwan Prabodya
                 <br />
-                Dop - Tasindu wikramasinghe / Hiviru Dilneth
+                <b>Dop -</b> Tasindu wikramasinghe / Hiviru Dilneth
               </p>
               <a href="/18wannam" className="mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
             </div>
