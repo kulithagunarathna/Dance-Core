@@ -128,7 +128,7 @@ const HomePage = ({ setActivePage }) => {
           <div className="max-w-6xl w-full flex flex-col md:flex-row gap-8">
             {/* Text Section */}
             <div className="md:w-1/2 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest News</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Production</h2>
               <h3 className="text-xl md:text-2xl font-semibold mb-2">18 වන්නම් A CINEMATIC DANCE COVER</h3>
               <h3 className="text-xl md:text-2xl font-semibold mb-2">OUT NOW!</h3>
               <p className="text-gray-700 leading-relaxed text-justify">
@@ -138,7 +138,7 @@ const HomePage = ({ setActivePage }) => {
                 <br />
                 Dop - Tasindu wikramasinghe / Hiviru Dilneth
               </p>
-              <a href="/news" className="mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
+              <a href="/18wannam" className="mt-4 text-blue-600 font-semibold hover:underline">Read More →</a>
             </div>
             {/* Image Section */}
             <div className="md:w-1/2 flex justify-center md:justify-end items-center">
