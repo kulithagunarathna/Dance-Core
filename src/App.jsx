@@ -22,7 +22,7 @@ import ArtistsPage from './pages/Artists';
 import LoginPage from './pages/LoginPage';
 import LessonsPage from './pages/LessonsPage';
 import ComingSoonPage from './pages/CommingSoonPage';
-import PdfPage from './pages/18wannam';
+import Wannam from './pages/18wannam';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -43,7 +43,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/lessons" element={<LessonsPage />} />
           <Route path="/coming-soon" element={<ComingSoonPage />} />
-          <Route path="/18wannam" element={<PdfPage/>} />
+          <Route path="/18wannam" element={<Wannam/>} />
           
           <Route path="/admin" element={<AdminLoginPage />} /> 
           <Route path="/admin/dashboard" element={<AdminLayout><AdminDashboardPage /></AdminLayout>} />
