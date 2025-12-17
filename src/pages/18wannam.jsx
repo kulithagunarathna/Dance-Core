@@ -1,5 +1,6 @@
 import React from 'react';
 import myImage from '../assets/images/18-wannam-A-cinematic-dance-cover-by-Studio-Dance-Core-or.jpg';
+import NavBar from '../components/NavBar';
 
 const Wannam = () => {
   const containerStyle = {
@@ -18,11 +19,16 @@ const Wannam = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      {/* Using an <img> tag ensures the browser calculates the full height of your tall image */}
-      <img src={myImage} alt="Details" style={imageStyle} />
-      
-    </div>
+    <>
+      <div className="sticky top-0 z-50 w-full">
+        <NavBar setActivePage='news' />
+      </div>
+
+      <div style={containerStyle}>
+        {/* Using an <img> tag ensures the browser calculates the full height of your tall image */}
+        <img src={myImage} alt="Details" style={imageStyle} />
+
+      </div></>
   );
 }
 
