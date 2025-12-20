@@ -27,7 +27,7 @@ const Footer = () => (
     </div>
     <div className="container mx-auto text-center mt-4">
       <div className="border-t border-gray-700 pt-4">
-        <p className="text-sm md:text-base">Developed By <a href ="https://elements-wine.vercel.app" className="underline hover:text-[#FFDBBB] transition-colors duration-300">Elements</a></p>
+        <p className="text-sm md:text-base">Developed By <a className="underline hover:text-[#FFDBBB] transition-colors duration-300">Elements</a></p>
       </div>
     </div>
   </footer>
