@@ -23,6 +23,7 @@ import LoginPage from './pages/LoginPage';
 import LessonsPage from './pages/LessonsPage';
 import ComingSoonPage from './pages/CommingSoonPage';
 import Wannam from './pages/18wannam';
+import Services from './pages/Services';
 
 const App = () => {
   const [activePage, setActivePage] = useState('home');
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/lessons" element={<LessonsPage />} />
           <Route path="/coming-soon" element={<ComingSoonPage />} />
           <Route path="/18wannam" element={<Wannam/>} />
+          <Route path="/services" element={<Services/>} />
           
           <Route path="/admin" element={<AdminLoginPage />} /> 
           <Route path="/admin/dashboard" element={<AdminLayout><AdminDashboardPage /></AdminLayout>} />

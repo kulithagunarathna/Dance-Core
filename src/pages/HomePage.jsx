@@ -3,7 +3,7 @@ import heroVideoMp4 from '../assets/videos/home.mp4';
 import heroVideoWebm from '../assets/videos/Home.webm';
 import {
   logo, classesandevents, merch, headlogo, bg,
-  lession, productions, moto, bggradiant, wannam
+  servicesCover, productions, moto, bggradiant, wannam
 } from '../utils/config';
 import NavBar from '../components/NavBar';
 
@@ -45,8 +45,8 @@ const HomePage = ({ setActivePage }) => {
   };
 
   // Navigate to the Lession page
-  const navigateToLessionPage = () => {
-    navigate('/lessons');
+  const navigateToServices = () => {
+    navigate('/services');
   };
 
   // Function to scroll to the Latest News section
@@ -227,18 +227,18 @@ const HomePage = ({ setActivePage }) => {
             </div>
           </section>
 
-          {/* Lessons Section */}
+          {/* Services Section */}
           <section
-            id="lession-section"
+            id="servicecs-section"
             className="w-full md:w-1/2 bg-transparent flex flex-col items-center"
           >
             <div
-              onClick={navigateToLessionPage}
+              onClick={navigateToServices}
               className="relative w-full cursor-pointer overflow-hidden rounded-lg shadow-xl hover:scale-105 transition-transform duration-300"
             >
               <img
-                src={lession}
-                alt="An image representing lessons"
+                src={servicesCover}
+                alt="An image representing sevices"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 hover:bg-opacity-0 transition-opacity duration-300"></div>

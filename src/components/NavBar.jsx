@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { UsersRound, UserRound, Newspaper, Menu, X, School, Shirt, Video, ChevronDown } from 'lucide-react';
+import { UsersRound, UserRound, Newspaper, Menu, X, School, Shirt, Video, ChevronDown, Briefcase } from 'lucide-react';
 import logo from '../assets/images/logo.webp';
 
 const NavBar = ({ setActivePage }) => {
@@ -122,6 +122,16 @@ const NavBar = ({ setActivePage }) => {
           Productions
         </Link>
         <Link
+          to="/services"
+          className="flex items-center text-white hover:text-[#EFD09E] transition-colors duration-200 text-base lg:text-lg font-medium group"
+          aria-label="Go to services page"
+          style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
+          onClick={() => { setActivePage('/merchs'); }}
+        >
+          <Briefcase className="h-5 w-5 mr-1 group-hover:scale-110 transition-transform" />
+          Services
+        </Link>
+        <Link
           to="/merchs"
           className="flex items-center text-white hover:text-[#EFD09E] transition-colors duration-200 text-base lg:text-lg font-medium group"
           aria-label="Go to Store Page"
@@ -208,6 +218,16 @@ const NavBar = ({ setActivePage }) => {
           >
             <Video className="h-7 w-7 mr-2" />
             Productions
+          </Link>
+          <Link
+            to="/services"
+            className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-xl font-medium"
+            aria-label="Go to Services"
+            style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
+            onClick={handleMobileLinkClick}
+          >
+            <Briefcase className="h-7 w-7 mr-2" />
+            Services
           </Link>
           <Link
             to="/merchs"
