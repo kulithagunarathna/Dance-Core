@@ -55,7 +55,7 @@ const Services2 = () => {
       whatsappUrl:"https://wa.me/p/25575205398813286/94713161550"
     },
     {
-      title: "Event Package 02 | Kikstart Pack",
+      title: "Event Package 02 | Kickstart Pack",
       description: "01 Solo performance | 01 Group performance | 05 Dancers",
       price: "LKR. 70,000",
       whatsappUrl:"https://wa.me/p/25198062516555720/94713161550"
