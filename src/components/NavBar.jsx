@@ -220,7 +220,7 @@ const NavBar = ({ setActivePage }) => {
             Productions
           </Link>
           <Link
-            to="/services"
+            to="/services2"
             className="flex items-center text-white hover:text-[#FFDBBB] transition-colors duration-200 text-xl font-medium"
             aria-label="Go to Services"
             style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}

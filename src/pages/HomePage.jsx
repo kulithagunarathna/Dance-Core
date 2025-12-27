@@ -46,7 +46,7 @@ const HomePage = ({ setActivePage }) => {
 
   // Navigate to the Lession page
   const navigateToServices = () => {
-    navigate('/services');
+    navigate('/services2');
   };
 
   // Function to scroll to the Latest News section
