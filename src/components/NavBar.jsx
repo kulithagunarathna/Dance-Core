@@ -122,11 +122,11 @@ const NavBar = ({ setActivePage }) => {
           Productions
         </Link>
         <Link
-          to="/services"
+          to="/services2"
           className="flex items-center text-white hover:text-[#EFD09E] transition-colors duration-200 text-base lg:text-lg font-medium group"
           aria-label="Go to services page"
           style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
-          onClick={() => { setActivePage('/merchs'); }}
+          onClick={() => { setActivePage('/services2'); }}
         >
           <Briefcase className="h-5 w-5 mr-1 group-hover:scale-110 transition-transform" />
           Services
