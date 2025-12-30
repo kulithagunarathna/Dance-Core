@@ -12,6 +12,7 @@ import LoginPage from './LoginPage';
 // Import the event images
 import freeDanceWorkshopImage from '../assets/images/events/event-1.webp';
 import freeDanceWorkshopImage2 from '../assets/images/events/event-2.jpeg';
+import dec13Workshop from '../assets/images/events/DEC-13-WORKSHOP.webp';
 
 // Use forwardRef to allow HomePage to pass a ref to this component
 const ClassesPage = forwardRef((props, ref) => { // 'ref' is the second argument from forwardRef
@@ -28,6 +29,11 @@ const ClassesPage = forwardRef((props, ref) => { // 'ref' is the second argument
 
   // Define your event data here
   const events = useMemo(() => [ // Memoize events array too, as it's static
+    {
+      id: 3,
+      imageUrl: dec13Workshop,
+      status: 'closed'
+    },
     {
       id: 2,
       imageUrl: freeDanceWorkshopImage2,
