@@ -10,10 +10,23 @@ import augestIntake from '../assets/images/events/audust-new-intake.webp';
 import rathworkshop from '../assets/images/events/WORKSHOP-3.webp'
 import sepIntake from '../assets/images/events/sep.webp';
 import wannam from '../assets/images/events/thumb-nail.webp';
+import rathnapuraJanuaryIntake from '../assets/images/events/rathnapura-january-intake.webp';
+
 
 // Import your background image
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-8',
+      imageUrl: rathnapuraJanuaryIntake,
+      title: 'Rathnapura January Intake',
+      description: 'January Intake for New Students is now open!\n' +
+      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n'+
+      'Every Friday - 03:00 PM to 05:00 PM\n'+
+      'Location: Damith Athukorale Dispensing Opticals, moragahayata, rathnapura\n'+
+      'Admission Fee: Rs. 1500\n'+
+      'Mothly Fee: Rs. 2000',
+    },
     {
       id: 'news-7',
       imageUrl: wannam,

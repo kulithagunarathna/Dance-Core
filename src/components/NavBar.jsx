@@ -161,16 +161,7 @@ const NavBar = ({ setActivePage }) => {
           <UsersRound className="h-5 w-5 mr-1 group-hover:scale-110 transition-transform" />
           Who We Are?
         </Link>
-        <Link
-          //to="/login"
-          to = ""
-          className="flex items-center px-4 py-2 rounded-full bg-white text-black hover:bg-[#EFD09E] hover:text-white transition-colors duration-200 text-base lg:text-lg font-medium group"
-          aria-label="Go to Login Page"
-          style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
-        >
-          <UserRound className="h-5 w-5 mr-1 group-hover:text-white transition-transform" />
-          Log In
-        </Link>
+        
       </div>
 
       {/* Mobile Menu */}
@@ -259,16 +250,7 @@ const NavBar = ({ setActivePage }) => {
             <UsersRound className="h-7 w-7 mr-2" />
             Who We Are?
           </Link>
-          <Link
-            to="/login"
-            className="flex items-center px-4 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-200 text-base lg:text-lg font-medium group"
-            aria-label="Go to Login Page"
-            style={{ fontFamily: "'MetroPhotograph - Demo Version Regular', sans-serif", letterSpacing: '0.05em' }}
-            onClick={handleMobileLinkClick}
-          >
-            <UserRound className="h-7 w-7 mr-2" />
-            Log In
-          </Link>
+          
         </div>
       )}
     </nav>
