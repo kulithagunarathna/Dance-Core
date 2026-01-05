@@ -11,11 +11,24 @@ import rathworkshop from '../assets/images/events/WORKSHOP-3.webp'
 import sepIntake from '../assets/images/events/sep.webp';
 import wannam from '../assets/images/events/thumb-nail.webp';
 import rathnapuraJanuaryIntake from '../assets/images/events/rathnapura-january-intake.webp';
+import maharagamaWorkshop from '../assets/images/events/maharagamaWorkshop.webp';
 
 
 // Import your background image
 const NewsPage = () => {
   const newsItems = [
+    {
+      id: 'news-9',
+      imageUrl: maharagamaWorkshop,
+      title: 'Maharagama Workshop',
+      description: 'Presented by Studio Dance Core and Groove Rapho\n' +
+      'January 15\n'+
+      '10.00 AM - 01.00 PM\n'+
+      'Location: Dini Dance Studio, Maharagama (Near the Keels)\n'+
+      'Open for all ages\n'+
+      'No need to have any basic knowladge\n'+
+      'Completely Free!',
+    },
     {
       id: 'news-8',
       imageUrl: rathnapuraJanuaryIntake,
