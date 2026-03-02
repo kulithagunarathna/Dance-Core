@@ -12,12 +12,13 @@ const ClassVideos = forwardRef((props, ref) => {
 
     const videos = [
         {
-            id: 'tiktok-rathnapura-class',
+            id: 'tiktok-Kalutara-class',
             type: 'tiktok-link', // For videos that link directly to TikTok website
-            videoUrl: 'https://vt.tiktok.com/ZSm3wFKj1/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
-            thumbnailSrc: rathnapuraClass, // <<< IMPORTANT: Use your imported thumbnail image
-            title: 'Rathnapura Class',
+            videoUrl: 'https://vt.tiktok.com/ZSm3ToJKa/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
+            thumbnailSrc: kalutaraClass, // <<< IMPORTANT: Use your imported thumbnail image
+            title: 'Kalutara Class',
         },
+
         {
             id: 'tiktok-maharagama-class',
             type: 'tiktok-link', // For videos that link directly to TikTok website
@@ -25,12 +26,13 @@ const ClassVideos = forwardRef((props, ref) => {
             thumbnailSrc: maharagamaClass, // <<< IMPORTANT: Use your imported thumbnail image
             title: 'Maharagama Class',
         },
+
         {
-            id: 'tiktok-Kalutara-class',
+            id: 'tiktok-rathnapura-class',
             type: 'tiktok-link', // For videos that link directly to TikTok website
-            videoUrl: 'https://vt.tiktok.com/ZSm3ToJKa/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
-            thumbnailSrc: kalutaraClass, // <<< IMPORTANT: Use your imported thumbnail image
-            title: 'Kalutara Class',
+            videoUrl: 'https://vt.tiktok.com/ZSm3wFKj1/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
+            thumbnailSrc: rathnapuraClass, // <<< IMPORTANT: Use your imported thumbnail image
+            title: 'Rathnapura Class',
         },
         // Add more video objects here as needed.
         // Ensure 'videoId' for YouTube embeds and 'videoUrl' for TikTok links are strings, not 'true'.
