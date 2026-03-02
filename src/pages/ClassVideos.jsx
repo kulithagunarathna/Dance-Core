@@ -3,34 +3,34 @@ import { useNavigate } from 'react-router-dom';
 
 // IMPORTANT: Import your custom TikTok thumbnail images here.
 // Example:
-import malabeClass1 from '../assets/images/malabeclass1.webp';
-import malabeClass2 from '../assets/images/malabeclass2.webp';
-import malabeClass3 from '../assets/images/malabeclass3.webp';
+import rathnapuraClass from '../assets/images/rathnapura class.webp';
+import maharagamaClass from '../assets/images/maharagama class.webp';
+import kalutaraClass from '../assets/images/kalutara class.webp';
 
 const ClassVideos = forwardRef((props, ref) => {
     const navigate = useNavigate();
 
     const videos = [
         {
-            id: 'insta-malabe-class1',
-            type: 'instagram-link', // For videos that link directly to TikTok website
-            videoUrl: 'https://www.instagram.com/reel/DLyzOstxQ8l/?utm_source=ig_web_copy_link&igsh=c2NrZzB2NWl3Z2Ru', // <<< IMPORTANT: Replace with your actual public TikTok video URL
-            thumbnailSrc: malabeClass1, // <<< IMPORTANT: Use your imported thumbnail image
-            title: 'Malabe Class',
+            id: 'tiktok-rathnapura-class',
+            type: 'tiktok-link', // For videos that link directly to TikTok website
+            videoUrl: 'https://vt.tiktok.com/ZSm3wFKj1/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
+            thumbnailSrc: rathnapuraClass, // <<< IMPORTANT: Use your imported thumbnail image
+            title: 'Rathnapura Class',
         },
         {
-            id: 'insta-malabe-class2',
-            type: 'instagram-link', // For videos that link directly to TikTok website
-            videoUrl: 'https://www.instagram.com/reel/DLy0sUXxAaa/?utm_source=ig_web_copy_link&igsh=NWR4bmduOXB1ZHZj', // <<< IMPORTANT: Replace with your actual public TikTok video URL
-            thumbnailSrc: malabeClass2, // <<< IMPORTANT: Use your imported thumbnail image
-            title: 'Malabe Class',
+            id: 'tiktok-maharagama-class',
+            type: 'tiktok-link', // For videos that link directly to TikTok website
+            videoUrl: 'https://vt.tiktok.com/ZSm3TEJvk/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
+            thumbnailSrc: maharagamaClass, // <<< IMPORTANT: Use your imported thumbnail image
+            title: 'Maharagama Class',
         },
         {
-            id: 'insta-malabe-class3',
-            type: 'instagram-link', // For videos that link directly to TikTok website
-            videoUrl: 'https://www.instagram.com/reel/DLyyqqkx56I/?utm_source=ig_web_copy_link&igsh=aTF3YzUyZGh3ZDIy', // <<< IMPORTANT: Replace with your actual public TikTok video URL
-            thumbnailSrc: malabeClass3, // <<< IMPORTANT: Use your imported thumbnail image
-            title: 'Malabe Class',
+            id: 'tiktok-Kalutara-class',
+            type: 'tiktok-link', // For videos that link directly to TikTok website
+            videoUrl: 'https://vt.tiktok.com/ZSm3ToJKa/', // <<< IMPORTANT: Replace with your actual public TikTok video URL
+            thumbnailSrc: kalutaraClass, // <<< IMPORTANT: Use your imported thumbnail image
+            title: 'Kalutara Class',
         },
         // Add more video objects here as needed.
         // Ensure 'videoId' for YouTube embeds and 'videoUrl' for TikTok links are strings, not 'true'.
@@ -38,8 +38,8 @@ const ClassVideos = forwardRef((props, ref) => {
 
     // Function to handle button click
     const handleSeeMoreClick = () => {
-        // Replace with the actual Instagram account URL
-        window.open('https://www.instagram.com/jayaruwan.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
+        // tiktok link
+        window.open('https://www.tiktok.com/@studio.dance.core?_r=1&_t=ZS-94M2HXuyIT2', '_blank');
     };
 
     return (
