@@ -23,9 +23,11 @@ const NewsPage = () => {
       imageUrl: marchIntake,
       title: 'March Intake',
       description: 'January Intake for New Students is now open!\n' +
-      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n'+
-      'Every Friday - 03:00 PM to 05:00 PM\n'+
-      'Location: Damith Athukorale Dispensing Opticals, moragahayata, rathnapura\n'+
+      'Join us for an exciting journey in dance. Enroll now to secure your spot!\n\n'+
+      'Every Friday - 03:00 PM to 05:00 PM\n\n'+
+      'Locations: \n- Colorful life skill development center, Katukurunda, Kalutara\n'+
+      '- Studio moonlight & gig maharagama, Maharagama\n'+
+      '- Damith Athukorale Dispensing Opticals, moragahayata, rathnapura.\n\n'+
       'Admission Fee: Rs. 1500\n'+
       'Mothly Fee: Rs. 2000',
     },
